@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
-using PokedexApi.Models;
+using PokedexApi.Models.Pokemons;
 
-namespace PokedexApi.Functions {
+namespace PokedexApi.Functions
+{
     public class PokeFunctions {
 
         public static async Task<Pokemon> GetPokeTeste() {

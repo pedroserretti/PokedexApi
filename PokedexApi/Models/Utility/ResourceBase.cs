@@ -2,11 +2,9 @@
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace PokedexApi.Models.Utility
-{
+namespace PokedexApi.Models.Utility {
 
-    public abstract class ResourceBase
-    {
+    public abstract class ResourceBase {
         public abstract int Id { get; set; }
 
         public static string? ApiEndpoint { get; }
@@ -14,8 +12,7 @@ namespace PokedexApi.Models.Utility
         public static bool IsApiEndpointCaseSensitive { get; }
     }
 
-    public abstract class NamedApiResource : ResourceBase
-    {
+    public abstract class NamedApiResource : ResourceBase {
 
         public abstract string Name { get; set; }
 
