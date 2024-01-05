@@ -1,5 +1,8 @@
 ﻿
 using Newtonsoft.Json;
+using PokedexApi.Models.Encounters;
+using PokedexApi.Models.Machines;
+using Games = PokedexApi.Models.Games;
 
 namespace PokedexApi.Models.Utility {
         public class Language : NamedApiResource {
@@ -41,7 +44,7 @@ namespace PokedexApi.Models.Utility {
             public int MaxLevel { get; set; }
 
             [JsonProperty("condition_values")]
-            //public List<NamedApiResource<EncounterConditionValue>> ConditionValues { get; set; }
+            public List<NamedApiResource<EncounterConditionValue>> ConditionValues { get; set; }
 
             public int Chance { get; set; }
 
@@ -61,14 +64,14 @@ namespace PokedexApi.Models.Utility {
             public int GameIndex { get; set; }
 
 
-            public NamedApiResource<Generation> Generation { get; set; }
+            public NamedApiResource<Games.Generation> Generation { get; set; }
         }
         public class MachineVersionDetail {
 
             public ApiResource<Machine> Machine { get; set; }
 
             [JsonProperty("version_group")]
-            //public NamedApiResource<VersionGroup> VersionGroup { get; set; }
+            public NamedApiResource<Games.VersionGroup> VersionGroup { get; set; }
         }
 
         public class Names {
@@ -81,7 +84,7 @@ namespace PokedexApi.Models.Utility {
             public string Name { get; set; }
         }
         public class PastGenerationData<TData> {
-            //public NamedApiResource<Generation> Generation { get; set; }
+            public NamedApiResource<Games.Generation> Generation { get; set; }
 
             protected TData Data { get; set; }
         }
@@ -95,7 +98,7 @@ namespace PokedexApi.Models.Utility {
         }
 
         public class VersionEncounterDetail {
-            //public NamedApiResource<Version> Version { get; set; }
+            public NamedApiResource<Games.Version> Version { get; set; }
 
             [JsonProperty("max_chance")]
             public int MaxChance { get; set; }
@@ -108,7 +111,7 @@ namespace PokedexApi.Models.Utility {
             [JsonProperty("game_index")]
             public int GameIndex { get; set; }
 
-            //public NamedApiResource<Version> Version { get; set; }
+            public NamedApiResource<Games.Version> Version { get; set; }
         }
 
         public class VersionGroupFlavorText {
@@ -118,6 +121,6 @@ namespace PokedexApi.Models.Utility {
             public NamedApiResource<Language> Language { get; set; }
 
             //[JsonProperty("version_group")]
-            //public NamedApiResource<VersionGroup> VersionGroup { get; set; }
+            public NamedApiResource<Games.VersionGroup> VersionGroup { get; set; }
         }
     }

@@ -1,6 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Games = PokedexApi.Models.Games;
+using PokedexApi.Models.Items;
 using PokedexApi.Models.Utility;
 using System.Runtime.Serialization;
+using PokedexApi.Models.Moves;
 
 namespace PokedexApi.Models.Pokemons {
 
@@ -60,7 +63,7 @@ namespace PokedexApi.Models.Pokemons {
 
         [DataMember]
         [JsonProperty("past_types")]
-        public List<PokemonPastTypes> PastTypes { get; set; }
+        public List<PokemonTypePast> PastTypes { get; set; }
 
         [DataMember]
         [JsonProperty("sprites")]
@@ -95,6 +98,18 @@ namespace PokedexApi.Models.Pokemons {
     }
 
     [DataContract]
+    public class PokemonType {
+
+        [DataMember]
+        [JsonProperty("slot")]
+        public int Slot { get; set; }
+
+        [DataMember]
+        [JsonProperty("type")]
+        public NamedApiResource<Types> Type { get; set; }
+    }
+
+    [DataContract]
     public class PokemonFormType {
 
         [DataMember]
@@ -103,7 +118,121 @@ namespace PokedexApi.Models.Pokemons {
 
         [DataMember]
         [JsonProperty("type")]
-        public NamedApiResource<Type> Type { get; set; }
+        public NamedApiResource<Types> Type { get; set; }
+    }
+
+    [DataContract]
+    public class PokemonTypePast {
+
+        [DataMember]
+        [JsonProperty("generation")]
+        public NamedApiResource<Games.Generation> Generation { get; set; }
+
+        [DataMember]
+        [JsonProperty("types")]
+        public List<PokemonType> Types { get; set; }
+    }
+
+    [DataContract]
+    public class PokemonHeldItem {
+
+        [DataMember]
+        [JsonProperty("item")]
+        public NamedApiResource<Item> Item { get; set; }
+
+        [DataMember]
+        [JsonProperty("version_details")] 
+        public List<PokemonHeldItemVersion> VersionDetails { get; set; }
+    }
+
+    [DataContract]
+    public class PokemonHeldItemVersion {
+
+        [DataMember]
+        [JsonProperty("version")]
+        public NamedApiResource<Games.Version> Version { get; set; }
+
+        [DataMember]
+        [JsonProperty("rarity")]
+        public int Rarity { get; set; }
+    }
+
+    [DataContract]
+    public class PokemonMove {
+
+        [DataMember]
+        [JsonProperty("move")]
+        public NamedApiResource<Move> Move { get; set; }
+
+        [DataMember]
+        [JsonProperty("version_group_details")]
+        public List<PokemonMoveVersion> VersionGroupDetails { get; set; }
+    }
+
+    [DataContract]
+    public class PokemonMoveVersion {
+
+        [DataMember]
+        [JsonProperty("move_learn_method")]
+        public NamedApiResource<Move> MoveLearnMethod { get; set; }
+
+        [DataMember]
+        [JsonProperty("version_group")]
+        public NamedApiResource<Games.VersionGroup> VersionGroup { get; set; }
+    }
+
+    [DataContract]
+    public class PokemonStat {
+
+        [DataMember]
+        [JsonProperty("stat")]
+        public NamedApiResource<Stat> Stat { get; set; }
+
+        [DataMember]
+        [JsonProperty("effort")]
+        public int Effort { get; set; }
+
+        [DataMember]
+        [JsonProperty("base_stat")]
+        public int BaseStat { get; set; }
+    }
+
+    [DataContract]
+    public class PokemonSprites {
+
+        [DataMember]
+        [JsonProperty("front_default")]
+        public string FrontDefault { get; set; }
+
+        [DataMember]
+        [JsonProperty("front_shiny")]
+        public string FrontShiny { get; set; }
+
+        [DataMember]
+        [JsonProperty("front_female")]
+        public string FrontFemake { get; set; }
+
+        [DataMember]
+        [JsonProperty("front_shiny_female")]
+        public string FrontShinyFemale { get; set; }
+
+        [DataMember]
+        [JsonProperty("back_default")]
+        public string BackDefault { get; set; }
+
+        [DataMember]
+        [JsonProperty("back_shiny")]
+        public string BackShiny { get; set; }
+
+        [DataMember]
+        [JsonProperty("back_female")]
+        public string BackFemale { get; set; }
+
+        [DataMember]
+        [JsonProperty("back_shiny_female")]
+        public string BackShinyFemale { get; set; }
+
+
     }
 
 }

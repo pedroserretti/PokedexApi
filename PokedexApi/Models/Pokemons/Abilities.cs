@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Runtime.Serialization;
 using PokedexApi.Models.Utility;
+using PokedexApi.Models.Games;
 
 namespace PokedexApi.Models.Pokemons {
     [DataContract]

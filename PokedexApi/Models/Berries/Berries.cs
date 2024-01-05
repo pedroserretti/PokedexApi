@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PokedexApi.Models.Items;
 using PokedexApi.Models.Pokemons;
 using PokedexApi.Models.Utility;
 using System.Runtime.Serialization;

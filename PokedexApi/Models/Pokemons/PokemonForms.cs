@@ -1,17 +1,18 @@
 ﻿using Newtonsoft.Json;
+using PokedexApi.Models.Games;
 using PokedexApi.Models.Utility;
 using System.Runtime.Serialization;
 
 namespace PokedexApi.Models.Pokemons {
     [DataContract]
-    public class PokemonForm {
+    public class PokemonForm : NamedApiResource {
         [DataMember]
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public override int Id { get; set; }
 
         [DataMember]
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public override string Name { get; set; }
 
         [DataMember]
         [JsonProperty("order")]
@@ -61,5 +62,25 @@ namespace PokedexApi.Models.Pokemons {
         [JsonProperty("form_names")]
         public List<Names> FormNames { get; set; }
 
+    }
+
+    [DataContract]
+    public class PokemonFormSprites {
+
+        [DataMember]
+        [JsonProperty("front_default")]
+        public string FrontDefault { get; set; }
+
+        [DataMember]
+        [JsonProperty("front_shiny")]
+        public string FrontShiny { get; set; }
+
+        [DataMember]
+        [JsonProperty("back_default")]
+        public string BackDefault { get; set; }
+
+        [DataMember]
+        [JsonProperty("back_shiny")]
+        public string BackShiny { get; set; }
     }
 }

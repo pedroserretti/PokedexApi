@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PokedexApi.Models.Berries;
 using PokedexApi.Models.Moves;
 using PokedexApi.Models.Utility;
 using System.Runtime.Serialization;
