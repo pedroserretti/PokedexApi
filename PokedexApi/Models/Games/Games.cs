@@ -1,4 +1,7 @@
 ﻿using Newtonsoft.Json;
+using PokedexApi.Models.Contests;
+using PokedexApi.Models.Locations;
+using PokedexApi.Models.Moves;
 using PokedexApi.Models.Pokemons;
 using PokedexApi.Models.Utility;
 using System.Runtime.Serialization;
@@ -6,43 +9,55 @@ using System.Runtime.Serialization;
 namespace PokedexApi.Models.Games {
 
     [DataContract]
-    public class Generation : NamedApiResource {
+    public class Generation(int id, string name, List<NamedApiResource<Ability>> abilities, List<Names> names, NamedApiResource<Region> mainRegion, List<NamedApiResource<Move>> moves, List<NamedApiResource<PokemonSpecies>> pokemonSpecies, List<NamedApiResource<Types>> types, List<NamedApiResource<VersionGroup>> versionGroups) : NamedApiResource {
 
         [DataMember]
         [JsonProperty("id")]
-        public override int Id { get; set; }
+        public override int Id { get; set; } = id;
 
         [DataMember]
         [JsonProperty("name")]
-        public override string Name { get; set; }
+        public override string Name { get; set; } = name;
 
         [DataMember]
         [JsonProperty("abilities")]
-        public List<NamedApiResource<Ability>> Abilities { get; set; }
+        public List<NamedApiResource<Ability>> Abilities { get; set; } = abilities;
 
         [DataMember]
         [JsonProperty("names")]
-        public List<Names> Names { get; set; }
+        public List<Names> Names { get; set; } = names;
 
         [DataMember]
         [JsonProperty("main_region")]
-        public NamedApiResource<Region> MainRegion { get; set; }
+        public NamedApiResource<Region> MainRegion { get; set; } = mainRegion;
 
         [DataMember]
         [JsonProperty("moves")]
-        public List<NamedApiResource<Move>> Moves { get; set; }
+        public List<NamedApiResource<Move>> Moves { get; set; } = moves;
 
         [DataMember]
         [JsonProperty("pokemon_species")]
-        public List<NamedApiResource<PokemonSpecies>> PokemonSpecies { get; set; }
+        public List<NamedApiResource<PokemonSpecies>> PokemonSpecies { get; set; } = pokemonSpecies;
 
         [DataMember]
         [JsonProperty("types")]
-        public List<NamedApiResource<Types>> Types { get; set; }
+        public List<NamedApiResource<Types>> Types { get; set; } = types;
 
         [DataMember]
         [JsonProperty("version_groups")]
-        public List<NamedApiResource<VersionGroup>> VersionGroups { get; set; }
+        public List<NamedApiResource<VersionGroup>> VersionGroups { get; set; } = versionGroups;
 
+        [JsonConstructor]
+        public Generation() : this(0, null!, null!, null!, null!, null!, null!, null!, null!) { }
+
+        public string Serialize(dynamic obj = null!) {
+            JsonSerializerSettings settings = new() { NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore, ReferenceLoopHandling = ReferenceLoopHandling.Ignore };
+            return JsonConvert.SerializeObject(obj ?? this, settings);
+        }
+
+        public static Generation Deserialize(string strAppData) {
+            JsonSerializerSettings settingsJson = new() { DefaultValueHandling = DefaultValueHandling.Populate };
+            return JsonConvert.DeserializeObject<Generation>(strAppData, settingsJson)!;
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using PokedexApi.Models.Pokemons;
+﻿using PokedexApi.Models.Pokemons;
 
 namespace PokedexApi.Functions
 {
@@ -8,10 +7,10 @@ namespace PokedexApi.Functions
         public static async Task<Pokemon> GetPokeTeste() {
             HttpClient client = new();
 
-            var response = await client.GetAsync($"https://pokeapi.co/api/v2/pokemon/125");
-            var jsonString = await response.Content.ReadAsStringAsync();
+            HttpResponseMessage response = await client.GetAsync($"https://pokeapi.co/api/v2/pokemon/125");
+            string jsonString = await response.Content.ReadAsStringAsync();
 
-            var jsonObject = JsonConvert.DeserializeObject<Pokemon>(jsonString);
+            Pokemon jsonObject = Pokemon.Deserialize(jsonString);
 
             if (jsonObject != null ) {
                 return jsonObject;

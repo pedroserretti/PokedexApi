@@ -1,5 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using static PokedexApi.Models.Utility.Common;
 
 namespace PokedexApi.Models.Utility
 {
@@ -18,13 +17,13 @@ namespace PokedexApi.Models.Utility
     public class ApiResourceList<T> : ResourceList<T> where T : ApiResource
     {
         [JsonPropertyName("results")]
-        public List<ApiResource<T>> Results { get; set; }
+        public List<ApiResource<T>>? Results { get; set; }
     }
 
     public class NamedApiResourceList<T> : ResourceList<T> where T : NamedApiResource
     {
         [JsonPropertyName("results")]
-        public List<NamedApiResource<T>> Results { get; set; }
+        public List<NamedApiResource<T>>? Results { get; set; }
     }
 }
 
