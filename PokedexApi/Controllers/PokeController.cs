@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PokedexApi.Functions;
-using PokedexApi.Models.Pokemons;
+using PokedexApi.Models.API.Pokemons;
 
-
-namespace PokedexApi.Controllers {
+namespace PokedexApi.Controllers
+{
 
     [Route("api/poke")]
     [ApiController]
@@ -12,7 +12,7 @@ namespace PokedexApi.Controllers {
 
         [HttpGet("{id}")]
         public async Task<string> GetPokemon(int id) {
-            Pokemon pokemon = await PokeFunctions.GetPokeTeste();
+            Pokemon pokemon = await PokeRepository.GetPokeTeste();
 
             string pokemonToString = JsonConvert.SerializeObject(pokemon);
 
