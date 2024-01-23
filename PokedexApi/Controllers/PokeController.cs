@@ -3,16 +3,16 @@ using Newtonsoft.Json;
 using PokedexApi.Functions;
 using PokedexApi.Models.API.Pokemons;
 
-namespace PokedexApi.Controllers
-{
+namespace PokedexApi.Controllers {
 
     [Route("api/poke")]
     [ApiController]
     public class PokeController : ControllerBase {
 
         [HttpGet("{id}")]
-        public async Task<string> GetPokemon(int id) {
-            Pokemon pokemon = await PokeRepository.GetPokeTeste();
+        public async Task<string> GetPokemon() {
+            PokeRepository pokeRepository = new();
+            List<Pokemon> pokemon = await pokeRepository.SearchAllPokemons();
 
             string pokemonToString = JsonConvert.SerializeObject(pokemon);
 

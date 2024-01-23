@@ -1,70 +1,49 @@
-﻿using PokedexApi.Models.API.Pokemons;
+﻿using Microsoft.AspNetCore.Mvc.Diagnostics;
+using Newtonsoft.Json;
+using PokedexApi.Models.API.Pokemons;
+using PokedexApi.Models.API.Utility;
 using PokedexApi.Repositories.Interfaces;
 
 namespace PokedexApi.Functions
 {
     public class PokeRepository : IPokeRepository {
 
-        //public static async Task<Pokemon> GetPokeTeste() {
-        //    HttpClient client = new();
 
-        //    HttpResponseMessage response = await client.GetAsync($"https://pokeapi.co/api/v2/pokemon/125");
-        //    string jsonString = await response.Content.ReadAsStringAsync();
+        public async Task<List<Pokemon>> SearchAllPokemons() {
+            Pokemon? poke = new();
+            List<Pokemon> lPokemon = new();
 
-        //    Pokemon jsonObject = Pokemon.Deserialize(jsonString);
+            try {
+                HttpClient client = new();
 
-        //    if (jsonObject != null ) {
-        //        return jsonObject;
-        //    }
+                HttpResponseMessage response = await client.GetAsync($"https://pokeapi.co/api/v2/pokemon/?limit=50");
+                string jsonString = await response.Content.ReadAsStringAsync();
 
-        //    return new Pokemon();
-        //}
+                NamedApiResourceList<Pokemon>? jsonObject = JsonConvert.DeserializeObject<NamedApiResourceList<Pokemon>>(jsonString);
 
-        public Task<List<Pokemon>> SearchAllPokemons() {
-            throw new NotImplementedException();
+
+                for (int i = 0; i <= jsonObject?.Results!.Count - 1; i++) {
+                    var url = jsonObject?.Results![i].Url;
+                    HttpResponseMessage allPokemonsResponse = await client.GetAsync(url);
+                    string jsonPokemon = await allPokemonsResponse.Content.ReadAsStringAsync();
+                    poke = JsonConvert.DeserializeObject<Pokemon>(jsonPokemon);
+                    lPokemon.Add(poke!);
+                }
+
+                if (poke != null) {
+                    return lPokemon;
+                }
+            } catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+
+            return [];
         }
 
         public Task<Pokemon> SearchPokemonById(int id) {
             throw new NotImplementedException();
         }
         public Task<Pokemon> SearchPokemonByName(string name) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Pokemon> SearchPokemonByAbility(string ability) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Pokemon> SearchPokemonByColor(string color) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Pokemon> SearchPokemonByEggGroup(string eggGroup) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Pokemon> SearchPokemonByGeneration(string generation) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Pokemon> SearchPokemonByHabitat(string habitat) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Pokemon> SearchPokemonByMove(string move) {
-            throw new NotImplementedException();
-        }
-
-
-        public Task<Pokemon> SearchPokemonByRegion(string region) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Pokemon> SearchPokemonByShape(string shape) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Pokemon> SearchPokemonByType(string type) {
             throw new NotImplementedException();
         }
 

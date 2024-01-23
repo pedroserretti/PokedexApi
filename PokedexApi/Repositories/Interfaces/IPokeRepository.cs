@@ -10,24 +10,6 @@ namespace PokedexApi.Repositories.Interfaces
 
         Task<Pokemon> SearchPokemonByName(string name);
 
-        Task<Pokemon> SearchPokemonByType(string type);
-
-        Task<Pokemon> SearchPokemonByAbility(string ability);
-
-        Task<Pokemon> SearchPokemonByMove(string move);
-
-        Task<Pokemon> SearchPokemonByGeneration(string generation);
-
-        Task<Pokemon> SearchPokemonByRegion(string region);
-
-        Task<Pokemon> SearchPokemonByEggGroup(string eggGroup);
-
-        Task<Pokemon> SearchPokemonByColor(string color);
-
-        Task<Pokemon> SearchPokemonByShape(string shape);
-
-        Task<Pokemon> SearchPokemonByHabitat(string habitat);
-
         Task<Pokemon> AddPokemon(Pokemon pokemon);
 
         Task<Pokemon> UpdatePokemon(Pokemon pokemon);

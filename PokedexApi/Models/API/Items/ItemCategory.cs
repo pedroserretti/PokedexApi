@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using PokedexApi.Models.API.Utility;
-using PokedexApi.Models.Games;
 using System.Runtime.Serialization;
 
 namespace PokedexApi.Models.API.Items

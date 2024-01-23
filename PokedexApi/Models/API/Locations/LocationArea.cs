@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
-using VersionPokemon = PokedexApi.Models.Games;
 using System.Runtime.Serialization;
-using PokedexApi.Models.Contests;
+
 using PokedexApi.Models.API.Pokemons;
 using PokedexApi.Models.API.Utility;
 

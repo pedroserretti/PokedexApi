@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using PokedexApi.Models.API.Encounters;
 using PokedexApi.Models.API.Games;
 using PokedexApi.Models.API.Machines;
-using Games = PokedexApi.Models.Games;
 
 namespace PokedexApi.Models.API.Utility
 {

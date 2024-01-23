@@ -4,7 +4,7 @@ using PokedexApi.Models.API.Locations;
 using PokedexApi.Models.API.Moves;
 using PokedexApi.Models.API.Pokemons;
 using PokedexApi.Models.API.Utility;
-using PokedexApi.Models.Contests;
+
 using System.Runtime.Serialization;
 
 namespace PokedexApi.Models.API.Evolution
