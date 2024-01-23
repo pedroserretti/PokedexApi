@@ -5,7 +5,6 @@ import 'package:pokedex_app/app/view/pages/home/home_page_elements.dart';
 import 'package:pokedex_app/app/view/pages/login/login_page.dart';
 import 'package:pokedex_app/app/view/pages/register/register_page.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
@@ -27,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/homepage': (context) => const HomePageElements(),
         '/register': (context) => const RegisterPage(),
         '/forgotpassword': (context) => const ForgotPasswordPage(),
+        //
       },
     );
   }
