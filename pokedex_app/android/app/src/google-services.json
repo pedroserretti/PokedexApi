@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "760895011429",
+    "project_id": "dev-mobile-dhc-bd",
+    "storage_bucket": "dev-mobile-dhc-bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760895011429:android:9ed1aac29cc8edfdf4248c",
+        "android_client_info": {
+          "package_name": "com.example.project_devmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKQE3eD1iyDDDQJqMOSj869xz5E2rvk24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
