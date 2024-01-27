@@ -194,26 +194,26 @@ class NaturePokeathlonStatAffect with _$NaturePokeathlonStatAffect {
 
 @freezed
 class Pokemon with _$Pokemon {
-  const factory Pokemon(
-    int id,
-    String name,
-    int? baseExperience,
-    int height,
-    bool isDefault,
-    int order,
-    int weight,
-    List<PokemonAbility> abilities,
-    List<NamedAPIResource> forms,
-    List<VersionGameIndex> gameIndices,
-    List<PokemonHeldItem> heldItems,
-    String locationAreaEncounters,
-    List<PokemonMove> moves,
-    List<PokemonTypePast> pastTypes,
-    PokemonSprites sprites,
-    NamedAPIResource species,
-    List<PokemonStat> stats,
-    List<PokemonType> types,
-  ) = _Pokemon;
+  const factory Pokemon({
+    int? id,
+    String? name,
+    @Default(0) int? baseExperience,
+    @Default(0) int? height,
+    @Default(false) bool? isDefault,
+    @Default(0) int? order,
+    @Default(0) int? weight,
+    @Default(null) List<PokemonAbility>? abilities,
+    @Default(null) List<NamedAPIResource>? forms,
+    @Default(null) List<VersionGameIndex>? gameIndices,
+    @Default(null) List<PokemonHeldItem>? heldItems,
+    @Default("") String? locationAreaEncounters,
+    @Default(null) List<PokemonMove>? moves,
+    @Default(null) List<PokemonTypePast>? pastTypes,
+    PokemonSprites? sprites,
+    @Default(null) NamedAPIResource? species,
+    @Default(null) List<PokemonStat>? stats,
+    @Default(null) List<PokemonType>? types,
+  }) = _Pokemon;
 
   factory Pokemon.fromJson(Map<String, dynamic> json) => _$PokemonFromJson(json);
 }

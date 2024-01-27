@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:pokedex_app/app/data/models/pokemon.dart';
 import 'package:pokedex_app/app/data/repositories/exceptions/poke_exception.dart';
@@ -18,7 +20,9 @@ class PokeRepository implements IPokeRepository {
 
       if (response.statusCode == 200) {
         sMessage = "Pokemon searched successfully.";
-        return response.data.map((e) => Pokemon.fromJson(e)).toList();
+        Iterable l = json.decode(response.data);
+        List<Pokemon> posts = List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
+        return posts;
       } else {
         String sMessage = "An error ocurring when trying to search pokemons.";
         throw PokeException(message: sMessage);

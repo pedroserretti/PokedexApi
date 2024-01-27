@@ -1,49 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:pokedex_app/app/view/components/constants/color_pattern.dart';
 import 'package:pokedex_app/app/view/components/constants/font_pattern.dart';
-import 'package:pokedex_app/app/view/components/widgets/custom_text.dart';
-import 'package:pokedex_app/app/view/extensions/size_extensions.dart';
-import 'package:pokedex_app/app/view/helpers/responsive_helper.dart';
-
-
-class MobileForgotPassword extends StatefulWidget {
-  const MobileForgotPassword({super.key});
-
-  @override
-  State<MobileForgotPassword> createState() => _MobileForgotPasswordState();
-}
-
-class _MobileForgotPasswordState extends State<MobileForgotPassword> with SingleTickerProviderStateMixin {
-  @override
-  Widget build(BuildContext context) {
-    return Column(children: [
-      Stack(children: [
-        ClipPath(
-          clipper: WaveClipperTwo(flip: false),
-          child: Container(
-            height: context.screenHeight - 800,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [context.colors.darkRed, context.colors.red],
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-          top: 30,
-          child: IconButton(
-            onPressed: () {
-              Navigator.popAndPushNamed(context, '/');
-            },
-            icon: Icon(Icons.arrow_back_rounded, color: context.colors.white),
-          ),
-        ),
-      ]),
-      const ForgotPasswordForms()
-    ]);
-  }
-}
+import 'package:pokedex_app/app/view/components/widgets/generics/custom_text.dart';
 
 class ForgotPasswordForms extends StatefulWidget {
   const ForgotPasswordForms({super.key});
@@ -63,7 +21,6 @@ class _ForgotPasswordFormsState extends State<ForgotPasswordForms> with SingleTi
   @override
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-      Visibility(visible: ResponsiveHelper.isMobile(context) || ResponsiveHelper.isTablet(context), child: const SizedBox(height: 200)),
       Padding(
         padding: const EdgeInsets.all(20),
         child: Text(
@@ -81,17 +38,14 @@ class _ForgotPasswordFormsState extends State<ForgotPasswordForms> with SingleTi
         ),
       ),
       const SizedBox(height: 20),
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 50),
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            SizedBox(
-              width: 350,
-              child: TextoCustom(textoLabel: 'E-mail', icon: Icons.email_rounded, textoController: _forgotController),
-            ),
-          ]),
+      Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          SizedBox(
+            width: 350,
+            child: TextoCustom(textoLabel: 'E-mail', textoController: _forgotController),
+          ),
         ]),
-      ),
+      ]),
       const SizedBox(height: 30),
       Center(
         child: GestureDetector(
@@ -110,7 +64,7 @@ class _ForgotPasswordFormsState extends State<ForgotPasswordForms> with SingleTi
             child: Align(
               alignment: Alignment.center,
               child: Text(
-                'Enviar',
+                'ENVIAR',
                 style: context.textStyles.tButton.copyWith(color: context.colors.white),
               ),
             ),

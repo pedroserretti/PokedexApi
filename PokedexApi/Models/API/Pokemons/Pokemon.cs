@@ -21,67 +21,67 @@ namespace PokedexApi.Models.API.Pokemons
 
         [DataMember]
         [JsonProperty("base_experience")]
-        public int BaseExperience { get; set; } = baseExperience;
+        public int? BaseExperience { get; set; } = baseExperience;
 
         [DataMember]
         [JsonProperty("height")]
-        public int Height { get; set; } = height;
+        public int? Height { get; set; } = height;
 
         [DataMember]
         [JsonProperty("is_default")]
-        public bool IsDefault { get; set; } = isDefault;
+        public bool? IsDefault { get; set; } = isDefault;
 
         [DataMember]
         [JsonProperty("order")]
-        public int Order { get; set; } = order;
+        public int? Order { get; set; } = order;
 
         [DataMember]
         [JsonProperty("weight")]
-        public int Weight { get; set; } = weight;
+        public int? Weight { get; set; } = weight;
 
         [DataMember]
         [JsonProperty("abilities")]
-        public List<PokemonAbility> Abilities { get; set; } = abilities;
+        public List<PokemonAbility>? Abilities { get; set; } = abilities;
 
         [DataMember]
         [JsonProperty("forms")]
-        public List<NamedApiResource<PokemonForm>> Forms { get; set; } = forms;
+        public List<NamedApiResource<PokemonForm>>? Forms { get; set; } = forms;
 
         [DataMember]
         [JsonProperty("game_indices")]
-        public List<VersionGameIndex> GameIndices { get; set; } = gameIndices;
+        public List<VersionGameIndex>? GameIndices { get; set; } = gameIndices;
 
         [DataMember]
         [JsonProperty("held_items")]
-        public List<PokemonHeldItem> HeldItems { get; set; } = heldItems;
+        public List<PokemonHeldItem>? HeldItems { get; set; } = heldItems;
 
         [DataMember]
         [JsonProperty("location_area_encounters")]
-        public string LocationAreaEncounters { get; set; } = locationAreaEncounters;
+        public string? LocationAreaEncounters { get; set; } = locationAreaEncounters;
 
         [DataMember]
         [JsonProperty("moves")]
-        public List<PokemonMove> Moves { get; set; } = moves;
+        public List<PokemonMove>? Moves { get; set; } = moves;
 
         [DataMember]
         [JsonProperty("past_types")]
-        public List<PokemonTypePast> PastTypes { get; set; } = pastTypes;
+        public List<PokemonTypePast>? PastTypes { get; set; } = pastTypes;
 
         [DataMember]
         [JsonProperty("sprites")]
-        public PokemonSprites Sprites { get; set; } = sprites;
+        public PokemonSprites? Sprites { get; set; } = sprites;
 
         [DataMember]
         [JsonProperty("species")]
-        public NamedApiResource<PokemonSpecies> Species { get; set; } = species;
+        public NamedApiResource<PokemonSpecies>? Species { get; set; } = species;
 
         [DataMember]
         [JsonProperty("stats")]
-        public List<PokemonStat> Stats { get; set; } = stats;
+        public List<PokemonStat>? Stats { get; set; } = stats;
 
         [DataMember]
         [JsonProperty("types")]
-        public List<PokemonType> Types { get; set; } = types;
+        public List<PokemonType>? Types { get; set; } = types;
 
         [JsonConstructor]
         public Pokemon() : this(0, null!, 0, 0, false, 0, 0, null!, null!, null!, null!, null!, null!, null!, null!, null!, null!, null!) { }

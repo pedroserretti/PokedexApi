@@ -329,40 +329,52 @@ Map<String, dynamic> _$$NaturePokeathlonStatAffectImplToJson(
 
 _$PokemonImpl _$$PokemonImplFromJson(Map<String, dynamic> json) =>
     _$PokemonImpl(
-      json['id'] as int,
-      json['name'] as String,
-      json['baseExperience'] as int?,
-      json['height'] as int,
-      json['isDefault'] as bool,
-      json['order'] as int,
-      json['weight'] as int,
-      (json['abilities'] as List<dynamic>)
-          .map((e) => PokemonAbility.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      (json['forms'] as List<dynamic>)
-          .map((e) => NamedAPIResource.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      (json['gameIndices'] as List<dynamic>)
-          .map((e) => VersionGameIndex.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      (json['heldItems'] as List<dynamic>)
-          .map((e) => PokemonHeldItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      json['locationAreaEncounters'] as String,
-      (json['moves'] as List<dynamic>)
-          .map((e) => PokemonMove.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      (json['pastTypes'] as List<dynamic>)
-          .map((e) => PokemonTypePast.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      PokemonSprites.fromJson(json['sprites'] as Map<String, dynamic>),
-      NamedAPIResource.fromJson(json['species'] as Map<String, dynamic>),
-      (json['stats'] as List<dynamic>)
-          .map((e) => PokemonStat.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      (json['types'] as List<dynamic>)
-          .map((e) => PokemonType.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      id: json['id'] as int?,
+      name: json['name'] as String?,
+      baseExperience: json['baseExperience'] as int? ?? 0,
+      height: json['height'] as int? ?? 0,
+      isDefault: json['isDefault'] as bool? ?? false,
+      order: json['order'] as int? ?? 0,
+      weight: json['weight'] as int? ?? 0,
+      abilities: (json['abilities'] as List<dynamic>?)
+              ?.map((e) => PokemonAbility.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          null,
+      forms: (json['forms'] as List<dynamic>?)
+              ?.map((e) => NamedAPIResource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          null,
+      gameIndices: (json['gameIndices'] as List<dynamic>?)
+              ?.map((e) => VersionGameIndex.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          null,
+      heldItems: (json['heldItems'] as List<dynamic>?)
+              ?.map((e) => PokemonHeldItem.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          null,
+      locationAreaEncounters: json['locationAreaEncounters'] as String? ?? "",
+      moves: (json['moves'] as List<dynamic>?)
+              ?.map((e) => PokemonMove.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          null,
+      pastTypes: (json['pastTypes'] as List<dynamic>?)
+              ?.map((e) => PokemonTypePast.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          null,
+      sprites: json['sprites'] == null
+          ? null
+          : PokemonSprites.fromJson(json['sprites'] as Map<String, dynamic>),
+      species: json['species'] == null
+          ? null
+          : NamedAPIResource.fromJson(json['species'] as Map<String, dynamic>),
+      stats: (json['stats'] as List<dynamic>?)
+              ?.map((e) => PokemonStat.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          null,
+      types: (json['types'] as List<dynamic>?)
+              ?.map((e) => PokemonType.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          null,
     );
 
 Map<String, dynamic> _$$PokemonImplToJson(_$PokemonImpl instance) =>

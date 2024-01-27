@@ -15,7 +15,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     return const Scaffold(
       resizeToAvoidBottomInset: false,
       body: ResponsiveHelper(
-        mobile: MobileForgotPassword(),
+        mobile: ForgotPasswordForms(),
         desktop: ForgotPasswordForms(),
       ),
     );

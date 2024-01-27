@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pokedex_app/app/view/helpers/responsive_helper.dart';
 import 'package:pokedex_app/app/view/pages/register/register_elements.dart';
 
-
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
@@ -16,7 +15,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return const Scaffold(
         resizeToAvoidBottomInset: false,
         body: ResponsiveHelper(
-          mobile: MobileRegisterPage(),
+          mobile: RegisterForms(),
           desktop: RegisterForms(),
         ));
   }

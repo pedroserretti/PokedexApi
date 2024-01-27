@@ -4,7 +4,7 @@ namespace PokedexApi.Repositories.Interfaces
 {
     public interface IPokeRepository {
 
-        Task<List<Pokemon>> SearchAllPokemons();
+        Task<string> SearchAllPokemons();
 
         Task<Pokemon> SearchPokemonById(int id);
 

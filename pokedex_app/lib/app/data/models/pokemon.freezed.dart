@@ -3532,24 +3532,24 @@ Pokemon _$PokemonFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Pokemon {
-  int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   int? get baseExperience => throw _privateConstructorUsedError;
-  int get height => throw _privateConstructorUsedError;
-  bool get isDefault => throw _privateConstructorUsedError;
-  int get order => throw _privateConstructorUsedError;
-  int get weight => throw _privateConstructorUsedError;
-  List<PokemonAbility> get abilities => throw _privateConstructorUsedError;
-  List<NamedAPIResource> get forms => throw _privateConstructorUsedError;
-  List<VersionGameIndex> get gameIndices => throw _privateConstructorUsedError;
-  List<PokemonHeldItem> get heldItems => throw _privateConstructorUsedError;
-  String get locationAreaEncounters => throw _privateConstructorUsedError;
-  List<PokemonMove> get moves => throw _privateConstructorUsedError;
-  List<PokemonTypePast> get pastTypes => throw _privateConstructorUsedError;
-  PokemonSprites get sprites => throw _privateConstructorUsedError;
-  NamedAPIResource get species => throw _privateConstructorUsedError;
-  List<PokemonStat> get stats => throw _privateConstructorUsedError;
-  List<PokemonType> get types => throw _privateConstructorUsedError;
+  int? get height => throw _privateConstructorUsedError;
+  bool? get isDefault => throw _privateConstructorUsedError;
+  int? get order => throw _privateConstructorUsedError;
+  int? get weight => throw _privateConstructorUsedError;
+  List<PokemonAbility>? get abilities => throw _privateConstructorUsedError;
+  List<NamedAPIResource>? get forms => throw _privateConstructorUsedError;
+  List<VersionGameIndex>? get gameIndices => throw _privateConstructorUsedError;
+  List<PokemonHeldItem>? get heldItems => throw _privateConstructorUsedError;
+  String? get locationAreaEncounters => throw _privateConstructorUsedError;
+  List<PokemonMove>? get moves => throw _privateConstructorUsedError;
+  List<PokemonTypePast>? get pastTypes => throw _privateConstructorUsedError;
+  PokemonSprites? get sprites => throw _privateConstructorUsedError;
+  NamedAPIResource? get species => throw _privateConstructorUsedError;
+  List<PokemonStat>? get stats => throw _privateConstructorUsedError;
+  List<PokemonType>? get types => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3562,27 +3562,27 @@ abstract class $PokemonCopyWith<$Res> {
       _$PokemonCopyWithImpl<$Res, Pokemon>;
   @useResult
   $Res call(
-      {int id,
-      String name,
+      {int? id,
+      String? name,
       int? baseExperience,
-      int height,
-      bool isDefault,
-      int order,
-      int weight,
-      List<PokemonAbility> abilities,
-      List<NamedAPIResource> forms,
-      List<VersionGameIndex> gameIndices,
-      List<PokemonHeldItem> heldItems,
-      String locationAreaEncounters,
-      List<PokemonMove> moves,
-      List<PokemonTypePast> pastTypes,
-      PokemonSprites sprites,
-      NamedAPIResource species,
-      List<PokemonStat> stats,
-      List<PokemonType> types});
+      int? height,
+      bool? isDefault,
+      int? order,
+      int? weight,
+      List<PokemonAbility>? abilities,
+      List<NamedAPIResource>? forms,
+      List<VersionGameIndex>? gameIndices,
+      List<PokemonHeldItem>? heldItems,
+      String? locationAreaEncounters,
+      List<PokemonMove>? moves,
+      List<PokemonTypePast>? pastTypes,
+      PokemonSprites? sprites,
+      NamedAPIResource? species,
+      List<PokemonStat>? stats,
+      List<PokemonType>? types});
 
-  $PokemonSpritesCopyWith<$Res> get sprites;
-  $NamedAPIResourceCopyWith<$Res> get species;
+  $PokemonSpritesCopyWith<$Res>? get sprites;
+  $NamedAPIResourceCopyWith<$Res>? get species;
 }
 
 /// @nodoc
@@ -3598,113 +3598,121 @@ class _$PokemonCopyWithImpl<$Res, $Val extends Pokemon>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
+    Object? id = freezed,
+    Object? name = freezed,
     Object? baseExperience = freezed,
-    Object? height = null,
-    Object? isDefault = null,
-    Object? order = null,
-    Object? weight = null,
-    Object? abilities = null,
-    Object? forms = null,
-    Object? gameIndices = null,
-    Object? heldItems = null,
-    Object? locationAreaEncounters = null,
-    Object? moves = null,
-    Object? pastTypes = null,
-    Object? sprites = null,
-    Object? species = null,
-    Object? stats = null,
-    Object? types = null,
+    Object? height = freezed,
+    Object? isDefault = freezed,
+    Object? order = freezed,
+    Object? weight = freezed,
+    Object? abilities = freezed,
+    Object? forms = freezed,
+    Object? gameIndices = freezed,
+    Object? heldItems = freezed,
+    Object? locationAreaEncounters = freezed,
+    Object? moves = freezed,
+    Object? pastTypes = freezed,
+    Object? sprites = freezed,
+    Object? species = freezed,
+    Object? stats = freezed,
+    Object? types = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
+              as int?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       baseExperience: freezed == baseExperience
           ? _value.baseExperience
           : baseExperience // ignore: cast_nullable_to_non_nullable
               as int?,
-      height: null == height
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
-      isDefault: null == isDefault
+              as int?,
+      isDefault: freezed == isDefault
           ? _value.isDefault
           : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool,
-      order: null == order
+              as bool?,
+      order: freezed == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as int,
-      weight: null == weight
+              as int?,
+      weight: freezed == weight
           ? _value.weight
           : weight // ignore: cast_nullable_to_non_nullable
-              as int,
-      abilities: null == abilities
+              as int?,
+      abilities: freezed == abilities
           ? _value.abilities
           : abilities // ignore: cast_nullable_to_non_nullable
-              as List<PokemonAbility>,
-      forms: null == forms
+              as List<PokemonAbility>?,
+      forms: freezed == forms
           ? _value.forms
           : forms // ignore: cast_nullable_to_non_nullable
-              as List<NamedAPIResource>,
-      gameIndices: null == gameIndices
+              as List<NamedAPIResource>?,
+      gameIndices: freezed == gameIndices
           ? _value.gameIndices
           : gameIndices // ignore: cast_nullable_to_non_nullable
-              as List<VersionGameIndex>,
-      heldItems: null == heldItems
+              as List<VersionGameIndex>?,
+      heldItems: freezed == heldItems
           ? _value.heldItems
           : heldItems // ignore: cast_nullable_to_non_nullable
-              as List<PokemonHeldItem>,
-      locationAreaEncounters: null == locationAreaEncounters
+              as List<PokemonHeldItem>?,
+      locationAreaEncounters: freezed == locationAreaEncounters
           ? _value.locationAreaEncounters
           : locationAreaEncounters // ignore: cast_nullable_to_non_nullable
-              as String,
-      moves: null == moves
+              as String?,
+      moves: freezed == moves
           ? _value.moves
           : moves // ignore: cast_nullable_to_non_nullable
-              as List<PokemonMove>,
-      pastTypes: null == pastTypes
+              as List<PokemonMove>?,
+      pastTypes: freezed == pastTypes
           ? _value.pastTypes
           : pastTypes // ignore: cast_nullable_to_non_nullable
-              as List<PokemonTypePast>,
-      sprites: null == sprites
+              as List<PokemonTypePast>?,
+      sprites: freezed == sprites
           ? _value.sprites
           : sprites // ignore: cast_nullable_to_non_nullable
-              as PokemonSprites,
-      species: null == species
+              as PokemonSprites?,
+      species: freezed == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
-              as NamedAPIResource,
-      stats: null == stats
+              as NamedAPIResource?,
+      stats: freezed == stats
           ? _value.stats
           : stats // ignore: cast_nullable_to_non_nullable
-              as List<PokemonStat>,
-      types: null == types
+              as List<PokemonStat>?,
+      types: freezed == types
           ? _value.types
           : types // ignore: cast_nullable_to_non_nullable
-              as List<PokemonType>,
+              as List<PokemonType>?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PokemonSpritesCopyWith<$Res> get sprites {
-    return $PokemonSpritesCopyWith<$Res>(_value.sprites, (value) {
+  $PokemonSpritesCopyWith<$Res>? get sprites {
+    if (_value.sprites == null) {
+      return null;
+    }
+
+    return $PokemonSpritesCopyWith<$Res>(_value.sprites!, (value) {
       return _then(_value.copyWith(sprites: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $NamedAPIResourceCopyWith<$Res> get species {
-    return $NamedAPIResourceCopyWith<$Res>(_value.species, (value) {
+  $NamedAPIResourceCopyWith<$Res>? get species {
+    if (_value.species == null) {
+      return null;
+    }
+
+    return $NamedAPIResourceCopyWith<$Res>(_value.species!, (value) {
       return _then(_value.copyWith(species: value) as $Val);
     });
   }
@@ -3718,29 +3726,29 @@ abstract class _$$PokemonImplCopyWith<$Res> implements $PokemonCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String name,
+      {int? id,
+      String? name,
       int? baseExperience,
-      int height,
-      bool isDefault,
-      int order,
-      int weight,
-      List<PokemonAbility> abilities,
-      List<NamedAPIResource> forms,
-      List<VersionGameIndex> gameIndices,
-      List<PokemonHeldItem> heldItems,
-      String locationAreaEncounters,
-      List<PokemonMove> moves,
-      List<PokemonTypePast> pastTypes,
-      PokemonSprites sprites,
-      NamedAPIResource species,
-      List<PokemonStat> stats,
-      List<PokemonType> types});
+      int? height,
+      bool? isDefault,
+      int? order,
+      int? weight,
+      List<PokemonAbility>? abilities,
+      List<NamedAPIResource>? forms,
+      List<VersionGameIndex>? gameIndices,
+      List<PokemonHeldItem>? heldItems,
+      String? locationAreaEncounters,
+      List<PokemonMove>? moves,
+      List<PokemonTypePast>? pastTypes,
+      PokemonSprites? sprites,
+      NamedAPIResource? species,
+      List<PokemonStat>? stats,
+      List<PokemonType>? types});
 
   @override
-  $PokemonSpritesCopyWith<$Res> get sprites;
+  $PokemonSpritesCopyWith<$Res>? get sprites;
   @override
-  $NamedAPIResourceCopyWith<$Res> get species;
+  $NamedAPIResourceCopyWith<$Res>? get species;
 }
 
 /// @nodoc
@@ -3754,98 +3762,98 @@ class __$$PokemonImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
+    Object? id = freezed,
+    Object? name = freezed,
     Object? baseExperience = freezed,
-    Object? height = null,
-    Object? isDefault = null,
-    Object? order = null,
-    Object? weight = null,
-    Object? abilities = null,
-    Object? forms = null,
-    Object? gameIndices = null,
-    Object? heldItems = null,
-    Object? locationAreaEncounters = null,
-    Object? moves = null,
-    Object? pastTypes = null,
-    Object? sprites = null,
-    Object? species = null,
-    Object? stats = null,
-    Object? types = null,
+    Object? height = freezed,
+    Object? isDefault = freezed,
+    Object? order = freezed,
+    Object? weight = freezed,
+    Object? abilities = freezed,
+    Object? forms = freezed,
+    Object? gameIndices = freezed,
+    Object? heldItems = freezed,
+    Object? locationAreaEncounters = freezed,
+    Object? moves = freezed,
+    Object? pastTypes = freezed,
+    Object? sprites = freezed,
+    Object? species = freezed,
+    Object? stats = freezed,
+    Object? types = freezed,
   }) {
     return _then(_$PokemonImpl(
-      null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      null == name
+              as int?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      freezed == baseExperience
+              as String?,
+      baseExperience: freezed == baseExperience
           ? _value.baseExperience
           : baseExperience // ignore: cast_nullable_to_non_nullable
               as int?,
-      null == height
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
-      null == isDefault
+              as int?,
+      isDefault: freezed == isDefault
           ? _value.isDefault
           : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool,
-      null == order
+              as bool?,
+      order: freezed == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as int,
-      null == weight
+              as int?,
+      weight: freezed == weight
           ? _value.weight
           : weight // ignore: cast_nullable_to_non_nullable
-              as int,
-      null == abilities
+              as int?,
+      abilities: freezed == abilities
           ? _value._abilities
           : abilities // ignore: cast_nullable_to_non_nullable
-              as List<PokemonAbility>,
-      null == forms
+              as List<PokemonAbility>?,
+      forms: freezed == forms
           ? _value._forms
           : forms // ignore: cast_nullable_to_non_nullable
-              as List<NamedAPIResource>,
-      null == gameIndices
+              as List<NamedAPIResource>?,
+      gameIndices: freezed == gameIndices
           ? _value._gameIndices
           : gameIndices // ignore: cast_nullable_to_non_nullable
-              as List<VersionGameIndex>,
-      null == heldItems
+              as List<VersionGameIndex>?,
+      heldItems: freezed == heldItems
           ? _value._heldItems
           : heldItems // ignore: cast_nullable_to_non_nullable
-              as List<PokemonHeldItem>,
-      null == locationAreaEncounters
+              as List<PokemonHeldItem>?,
+      locationAreaEncounters: freezed == locationAreaEncounters
           ? _value.locationAreaEncounters
           : locationAreaEncounters // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == moves
+              as String?,
+      moves: freezed == moves
           ? _value._moves
           : moves // ignore: cast_nullable_to_non_nullable
-              as List<PokemonMove>,
-      null == pastTypes
+              as List<PokemonMove>?,
+      pastTypes: freezed == pastTypes
           ? _value._pastTypes
           : pastTypes // ignore: cast_nullable_to_non_nullable
-              as List<PokemonTypePast>,
-      null == sprites
+              as List<PokemonTypePast>?,
+      sprites: freezed == sprites
           ? _value.sprites
           : sprites // ignore: cast_nullable_to_non_nullable
-              as PokemonSprites,
-      null == species
+              as PokemonSprites?,
+      species: freezed == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
-              as NamedAPIResource,
-      null == stats
+              as NamedAPIResource?,
+      stats: freezed == stats
           ? _value._stats
           : stats // ignore: cast_nullable_to_non_nullable
-              as List<PokemonStat>,
-      null == types
+              as List<PokemonStat>?,
+      types: freezed == types
           ? _value._types
           : types // ignore: cast_nullable_to_non_nullable
-              as List<PokemonType>,
+              as List<PokemonType>?,
     ));
   }
 }
@@ -3854,24 +3862,24 @@ class __$$PokemonImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PokemonImpl implements _Pokemon {
   const _$PokemonImpl(
-      this.id,
+      {this.id,
       this.name,
-      this.baseExperience,
-      this.height,
-      this.isDefault,
-      this.order,
-      this.weight,
-      final List<PokemonAbility> abilities,
-      final List<NamedAPIResource> forms,
-      final List<VersionGameIndex> gameIndices,
-      final List<PokemonHeldItem> heldItems,
-      this.locationAreaEncounters,
-      final List<PokemonMove> moves,
-      final List<PokemonTypePast> pastTypes,
+      this.baseExperience = 0,
+      this.height = 0,
+      this.isDefault = false,
+      this.order = 0,
+      this.weight = 0,
+      final List<PokemonAbility>? abilities = null,
+      final List<NamedAPIResource>? forms = null,
+      final List<VersionGameIndex>? gameIndices = null,
+      final List<PokemonHeldItem>? heldItems = null,
+      this.locationAreaEncounters = "",
+      final List<PokemonMove>? moves = null,
+      final List<PokemonTypePast>? pastTypes = null,
       this.sprites,
-      this.species,
-      final List<PokemonStat> stats,
-      final List<PokemonType> types)
+      this.species = null,
+      final List<PokemonStat>? stats = null,
+      final List<PokemonType>? types = null})
       : _abilities = abilities,
         _forms = forms,
         _gameIndices = gameIndices,
@@ -3885,87 +3893,118 @@ class _$PokemonImpl implements _Pokemon {
       _$$PokemonImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
-  final String name;
+  final String? name;
   @override
+  @JsonKey()
   final int? baseExperience;
   @override
-  final int height;
+  @JsonKey()
+  final int? height;
   @override
-  final bool isDefault;
+  @JsonKey()
+  final bool? isDefault;
   @override
-  final int order;
+  @JsonKey()
+  final int? order;
   @override
-  final int weight;
-  final List<PokemonAbility> _abilities;
+  @JsonKey()
+  final int? weight;
+  final List<PokemonAbility>? _abilities;
   @override
-  List<PokemonAbility> get abilities {
+  @JsonKey()
+  List<PokemonAbility>? get abilities {
+    final value = _abilities;
+    if (value == null) return null;
     if (_abilities is EqualUnmodifiableListView) return _abilities;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_abilities);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<NamedAPIResource> _forms;
+  final List<NamedAPIResource>? _forms;
   @override
-  List<NamedAPIResource> get forms {
+  @JsonKey()
+  List<NamedAPIResource>? get forms {
+    final value = _forms;
+    if (value == null) return null;
     if (_forms is EqualUnmodifiableListView) return _forms;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_forms);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<VersionGameIndex> _gameIndices;
+  final List<VersionGameIndex>? _gameIndices;
   @override
-  List<VersionGameIndex> get gameIndices {
+  @JsonKey()
+  List<VersionGameIndex>? get gameIndices {
+    final value = _gameIndices;
+    if (value == null) return null;
     if (_gameIndices is EqualUnmodifiableListView) return _gameIndices;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_gameIndices);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<PokemonHeldItem> _heldItems;
+  final List<PokemonHeldItem>? _heldItems;
   @override
-  List<PokemonHeldItem> get heldItems {
+  @JsonKey()
+  List<PokemonHeldItem>? get heldItems {
+    final value = _heldItems;
+    if (value == null) return null;
     if (_heldItems is EqualUnmodifiableListView) return _heldItems;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_heldItems);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final String locationAreaEncounters;
-  final List<PokemonMove> _moves;
+  @JsonKey()
+  final String? locationAreaEncounters;
+  final List<PokemonMove>? _moves;
   @override
-  List<PokemonMove> get moves {
+  @JsonKey()
+  List<PokemonMove>? get moves {
+    final value = _moves;
+    if (value == null) return null;
     if (_moves is EqualUnmodifiableListView) return _moves;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_moves);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<PokemonTypePast> _pastTypes;
+  final List<PokemonTypePast>? _pastTypes;
   @override
-  List<PokemonTypePast> get pastTypes {
+  @JsonKey()
+  List<PokemonTypePast>? get pastTypes {
+    final value = _pastTypes;
+    if (value == null) return null;
     if (_pastTypes is EqualUnmodifiableListView) return _pastTypes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_pastTypes);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final PokemonSprites sprites;
+  final PokemonSprites? sprites;
   @override
-  final NamedAPIResource species;
-  final List<PokemonStat> _stats;
+  @JsonKey()
+  final NamedAPIResource? species;
+  final List<PokemonStat>? _stats;
   @override
-  List<PokemonStat> get stats {
+  @JsonKey()
+  List<PokemonStat>? get stats {
+    final value = _stats;
+    if (value == null) return null;
     if (_stats is EqualUnmodifiableListView) return _stats;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_stats);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<PokemonType> _types;
+  final List<PokemonType>? _types;
   @override
-  List<PokemonType> get types {
+  @JsonKey()
+  List<PokemonType>? get types {
+    final value = _types;
+    if (value == null) return null;
     if (_types is EqualUnmodifiableListView) return _types;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_types);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -4044,63 +4083,63 @@ class _$PokemonImpl implements _Pokemon {
 
 abstract class _Pokemon implements Pokemon {
   const factory _Pokemon(
-      final int id,
-      final String name,
+      {final int? id,
+      final String? name,
       final int? baseExperience,
-      final int height,
-      final bool isDefault,
-      final int order,
-      final int weight,
-      final List<PokemonAbility> abilities,
-      final List<NamedAPIResource> forms,
-      final List<VersionGameIndex> gameIndices,
-      final List<PokemonHeldItem> heldItems,
-      final String locationAreaEncounters,
-      final List<PokemonMove> moves,
-      final List<PokemonTypePast> pastTypes,
-      final PokemonSprites sprites,
-      final NamedAPIResource species,
-      final List<PokemonStat> stats,
-      final List<PokemonType> types) = _$PokemonImpl;
+      final int? height,
+      final bool? isDefault,
+      final int? order,
+      final int? weight,
+      final List<PokemonAbility>? abilities,
+      final List<NamedAPIResource>? forms,
+      final List<VersionGameIndex>? gameIndices,
+      final List<PokemonHeldItem>? heldItems,
+      final String? locationAreaEncounters,
+      final List<PokemonMove>? moves,
+      final List<PokemonTypePast>? pastTypes,
+      final PokemonSprites? sprites,
+      final NamedAPIResource? species,
+      final List<PokemonStat>? stats,
+      final List<PokemonType>? types}) = _$PokemonImpl;
 
   factory _Pokemon.fromJson(Map<String, dynamic> json) = _$PokemonImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
-  String get name;
+  String? get name;
   @override
   int? get baseExperience;
   @override
-  int get height;
+  int? get height;
   @override
-  bool get isDefault;
+  bool? get isDefault;
   @override
-  int get order;
+  int? get order;
   @override
-  int get weight;
+  int? get weight;
   @override
-  List<PokemonAbility> get abilities;
+  List<PokemonAbility>? get abilities;
   @override
-  List<NamedAPIResource> get forms;
+  List<NamedAPIResource>? get forms;
   @override
-  List<VersionGameIndex> get gameIndices;
+  List<VersionGameIndex>? get gameIndices;
   @override
-  List<PokemonHeldItem> get heldItems;
+  List<PokemonHeldItem>? get heldItems;
   @override
-  String get locationAreaEncounters;
+  String? get locationAreaEncounters;
   @override
-  List<PokemonMove> get moves;
+  List<PokemonMove>? get moves;
   @override
-  List<PokemonTypePast> get pastTypes;
+  List<PokemonTypePast>? get pastTypes;
   @override
-  PokemonSprites get sprites;
+  PokemonSprites? get sprites;
   @override
-  NamedAPIResource get species;
+  NamedAPIResource? get species;
   @override
-  List<PokemonStat> get stats;
+  List<PokemonStat>? get stats;
   @override
-  List<PokemonType> get types;
+  List<PokemonType>? get types;
   @override
   @JsonKey(ignore: true)
   _$$PokemonImplCopyWith<_$PokemonImpl> get copyWith =>

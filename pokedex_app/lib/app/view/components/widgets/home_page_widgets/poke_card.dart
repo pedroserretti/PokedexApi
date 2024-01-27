@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex_app/app/data/models/pokemon.dart';
 import 'package:pokedex_app/app/view/components/constants/color_pattern.dart';
 
 class PokeCard extends StatefulWidget {
-  const PokeCard({Key? key}) : super(key: key);
+  final Pokemon poke;
+
+  const PokeCard(this.poke, {super.key});
 
   @override
   State createState() => _PokeCardState();
 }
 
 class _PokeCardState extends State<PokeCard> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,8 +27,8 @@ class _PokeCardState extends State<PokeCard> {
           ),
         ],
       ),
-      child: const Column(
-        children: [Text('teste')],
+      child: Column(
+        children: [Text(widget.poke.name!)],
       ),
     );
   }

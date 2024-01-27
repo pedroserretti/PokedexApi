@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pokedex_app/app/view/components/constants/color_pattern.dart';
 import 'package:pokedex_app/app/view/components/constants/font_pattern.dart';
-import 'package:pokedex_app/app/view/components/widgets/custom_text.dart';
+import 'package:pokedex_app/app/view/components/widgets/generics/custom_text.dart';
 import 'package:pokedex_app/app/view/helpers/responsive_helper.dart';
 import 'package:pokedex_app/app/view/pages/login/login_page.dart';
-
 
 class LoginForms extends StatefulWidget {
   const LoginForms({super.key});
@@ -59,18 +59,18 @@ class _LoginFormsState extends State<LoginForms> with SingleTickerProviderStateM
           // },
         ),
         SizedBox(
-          width: ResponsiveHelper.isMobile(context) ? 160 : 300,
+          width: ResponsiveHelper.isMobile(context) ? 150 : 300,
           child: Text(
-            "Esqueceu a senha?",
+            "Lembrar de mim",
             style: context.textStyles.tLabelS.copyWith(color: context.colors.white),
           ),
         ),
         GestureDetector(
           onTap: () {
-            Navigator.popAndPushNamed(context, '/forgotpassword');
+            context.push('/forgot-password');
           },
           child: Text(
-            "Lembrar de mim?",
+            "Esqueceu a senha?",
             style: context.textStyles.tLabelS.copyWith(color: context.colors.white),
           ),
         ),
@@ -79,7 +79,7 @@ class _LoginFormsState extends State<LoginForms> with SingleTickerProviderStateM
       Center(
         child: GestureDetector(
           onTap: () {
-            Navigator.popAndPushNamed(context, '/homepage');
+            context.push('/home');
           },
           child: Container(
             width: ResponsiveHelper.isMobile(context) ? 300 : 430,
@@ -104,7 +104,7 @@ class _LoginFormsState extends State<LoginForms> with SingleTickerProviderStateM
         const SizedBox(width: 2),
         GestureDetector(
           onTap: () {
-            Navigator.popAndPushNamed(context, '/register');
+            context.push('/register');
           },
           child: Text("Registrar", style: context.textStyles.tBodyM.copyWith(color: context.colors.white)),
         ),

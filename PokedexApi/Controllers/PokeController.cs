@@ -1,7 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using PokedexApi.Functions;
-using PokedexApi.Models.API.Pokemons;
 
 namespace PokedexApi.Controllers {
 
@@ -12,11 +9,9 @@ namespace PokedexApi.Controllers {
         [HttpGet("{id}")]
         public async Task<string> GetPokemon() {
             PokeRepository pokeRepository = new();
-            List<Pokemon> pokemon = await pokeRepository.SearchAllPokemons();
+            string pokemon = await pokeRepository.SearchAllPokemons();
 
-            string pokemonToString = JsonConvert.SerializeObject(pokemon);
-
-            return pokemonToString;
+            return pokemon;
         }
 
         [HttpPost]

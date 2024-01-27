@@ -1,43 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc.Diagnostics;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PokedexApi.Models.API.Pokemons;
 using PokedexApi.Models.API.Utility;
+using PokedexApi.Repositories.Functions;
 using PokedexApi.Repositories.Interfaces;
 
-namespace PokedexApi.Functions
+namespace PokedexApi
 {
     public class PokeRepository : IPokeRepository {
 
 
-        public async Task<List<Pokemon>> SearchAllPokemons() {
-            Pokemon? poke = new();
-            List<Pokemon> lPokemon = new();
+        public async Task<string> SearchAllPokemons() {
+            string pokeJson = "";
+            Pokemon pokemon = new();
 
-            try {
-                HttpClient client = new();
+            using (HttpClient client = new()) {
+                NamedApiResourceList<Pokemon>? jsonObject = await PokeFunctions.PokeApiResult(client, $"https://pokeapi.co/api/v2/pokemon/?limit=50");
+                pokeJson = await PokeFunctions.PokeApiAttributes(jsonObject, client, "simple");
 
-                HttpResponseMessage response = await client.GetAsync($"https://pokeapi.co/api/v2/pokemon/?limit=50");
-                string jsonString = await response.Content.ReadAsStringAsync();
-
-                NamedApiResourceList<Pokemon>? jsonObject = JsonConvert.DeserializeObject<NamedApiResourceList<Pokemon>>(jsonString);
-
-
-                for (int i = 0; i <= jsonObject?.Results!.Count - 1; i++) {
-                    var url = jsonObject?.Results![i].Url;
-                    HttpResponseMessage allPokemonsResponse = await client.GetAsync(url);
-                    string jsonPokemon = await allPokemonsResponse.Content.ReadAsStringAsync();
-                    poke = JsonConvert.DeserializeObject<Pokemon>(jsonPokemon);
-                    lPokemon.Add(poke!);
+                if (pokeJson != null) {
+                    return pokeJson;
                 }
 
-                if (poke != null) {
-                    return lPokemon;
-                }
-            } catch (Exception ex) {
-                Console.WriteLine(ex.Message);
             }
 
-            return [];
+            return "";
         }
 
         public Task<Pokemon> SearchPokemonById(int id) {
@@ -57,5 +43,6 @@ namespace PokedexApi.Functions
         public Task<bool> RemovePokemon(Pokemon pokemon) {
             throw new NotImplementedException();
         }
+
     }
 }
