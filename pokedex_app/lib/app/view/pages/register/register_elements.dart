@@ -50,19 +50,19 @@ class _RegisterFormsState extends State<RegisterForms> {
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 SizedBox(
                   width: 350,
-                  child: TextoCustom(tipoCampo: 'emailRegister', textoLabel: 'E-mail', icon: Icons.email, textoController: _controllerEmail),
+                  child: CustomText(tipoCampo: 'emailRegister', textoLabel: 'E-mail', icon: Icons.email, textoController: _controllerEmail),
                 ),
               ]),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 SizedBox(
                   width: 350,
-                  child: TextoCustom(tipoCampo: 'senhaRegister', textoLabel: 'Senha', icon: Icons.lock, textoController: _controllerSenha, esconderSenha: true),
+                  child: CustomText(tipoCampo: 'senhaRegister', textoLabel: 'Senha', icon: Icons.lock, textoController: _controllerSenha, esconderSenha: true),
                 ),
               ]),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 SizedBox(
                   width: 350,
-                  child: TextoCustom(tipoCampo: 'confirmarSenhaRegister', textoLabel: 'Confirmar senha', icon: Icons.lock, textoController: _controllerConfirmarSenha, esconderSenha: true),
+                  child: CustomText(tipoCampo: 'confirmarSenhaRegister', textoLabel: 'Confirmar senha', icon: Icons.lock, textoController: _controllerConfirmarSenha, esconderSenha: true),
                 ),
               ]),
               const SizedBox(height: 10),

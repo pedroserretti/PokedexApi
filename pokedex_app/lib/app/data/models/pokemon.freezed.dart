@@ -3876,7 +3876,7 @@ class _$PokemonImpl implements _Pokemon {
       this.locationAreaEncounters = "",
       final List<PokemonMove>? moves = null,
       final List<PokemonTypePast>? pastTypes = null,
-      this.sprites,
+      this.sprites = null,
       this.species = null,
       final List<PokemonStat>? stats = null,
       final List<PokemonType>? types = null})
@@ -3981,6 +3981,7 @@ class _$PokemonImpl implements _Pokemon {
   }
 
   @override
+  @JsonKey()
   final PokemonSprites? sprites;
   @override
   @JsonKey()

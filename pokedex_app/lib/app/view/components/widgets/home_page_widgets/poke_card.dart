@@ -22,7 +22,7 @@ class _PokeCardState extends State<PokeCard> {
         boxShadow: [
           BoxShadow(
             color: context.colors.darkBlack,
-            blurRadius: 10,
+            blurRadius: 15,
             offset: const Offset(5, 10),
           ),
         ],

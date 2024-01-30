@@ -209,7 +209,7 @@ class Pokemon with _$Pokemon {
     @Default("") String? locationAreaEncounters,
     @Default(null) List<PokemonMove>? moves,
     @Default(null) List<PokemonTypePast>? pastTypes,
-    PokemonSprites? sprites,
+    @Default(null) PokemonSprites? sprites,
     @Default(null) NamedAPIResource? species,
     @Default(null) List<PokemonStat>? stats,
     @Default(null) List<PokemonType>? types,

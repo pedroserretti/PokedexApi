@@ -16,7 +16,7 @@ class ColorPattern {
   Color lightBlue = const Color(0xFF38F3FF);
   Color white = const Color(0xFFFAFAFA);
   Color middleGrey = const Color(0xFF757575);
-  Color darkGrey = const Color.fromARGB(255, 94, 94, 94);
+  Color darkGrey = const Color.fromARGB(255, 41, 41, 41);
   Color black = const Color.fromARGB(255, 34, 34, 34);
   Color darkBlack = const Color.fromARGB(255, 17, 17, 17);
   Color darkRed = const Color.fromARGB(255, 122, 2, 0);

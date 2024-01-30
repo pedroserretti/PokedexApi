@@ -37,13 +37,13 @@ class _LoginFormsState extends State<LoginForms> with SingleTickerProviderStateM
       Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         SizedBox(
           width: ResponsiveHelper.isMobile(context) ? 350 : 480,
-          child: TextoCustom(tipoCampo: 'usuario', textoLabel: 'Email', textoController: _controllerEmail),
+          child: CustomText(tipoCampo: 'usuario', textoLabel: 'Email', textoController: _controllerEmail),
         ),
       ]),
       Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         SizedBox(
           width: ResponsiveHelper.isMobile(context) ? 350 : 480,
-          child: TextoCustom(tipoCampo: 'senhaLogin', textoLabel: 'Senha', icon: Icons.visibility_rounded, textoController: _controllerSenha, esconderSenha: true),
+          child: CustomText(tipoCampo: 'senhaLogin', textoLabel: 'Senha', icon: Icons.visibility_rounded, textoController: _controllerSenha, esconderSenha: true),
         ),
       ]),
       Row(mainAxisAlignment: MainAxisAlignment.center, children: [

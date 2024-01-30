@@ -42,7 +42,7 @@ class _ForgotPasswordFormsState extends State<ForgotPasswordForms> with SingleTi
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           SizedBox(
             width: 350,
-            child: TextoCustom(textoLabel: 'E-mail', textoController: _forgotController),
+            child: CustomText(textoLabel: 'E-mail', textoController: _forgotController),
           ),
         ]),
       ]),

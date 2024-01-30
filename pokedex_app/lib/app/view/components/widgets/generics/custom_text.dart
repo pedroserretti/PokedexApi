@@ -3,9 +3,8 @@ import 'package:pokedex_app/app/view/components/constants/color_pattern.dart';
 import 'package:pokedex_app/app/view/components/constants/font_pattern.dart';
 import 'package:pokedex_app/app/view/functions/validators.dart';
 
-
-class TextoCustom extends StatelessWidget {
-  const TextoCustom({this.esconderSenha = false, this.tipoCampo = "", this.textoLabel = "", this.icon, this.textoController, super.key});
+class CustomText extends StatelessWidget {
+  const CustomText({this.esconderSenha = false, this.tipoCampo = "", this.textoLabel = "", this.icon, this.textoController, super.key});
 
   final bool esconderSenha;
   final String tipoCampo;
@@ -18,19 +17,18 @@ class TextoCustom extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10),
       child: TextFormField(
+        cursorColor: context.colors.white,
         obscureText: esconderSenha,
         validator: Validators.escolherCampo(tipoCampo, controller: textoController),
         controller: textoController,
         decoration: InputDecoration(
-          suffixIcon: Icon(icon, color: context.colors.middleGrey),
+          focusColor: context.colors.white,
+          fillColor: context.colors.darkBlack,
+          suffixIcon: Icon(icon, color: context.colors.black),
           labelText: textoLabel,
           labelStyle: context.textStyles.tBodyL.copyWith(color: context.colors.middleGrey),
-          disabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: context.colors.middleGrey, width: 1.35),
-            borderRadius: BorderRadius.circular(20),
-          ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: context.colors.middleGrey, width: 1.35),
+            borderSide: BorderSide(color: context.colors.darkGrey, width: 1.35),
             borderRadius: BorderRadius.circular(20),
           ),
           focusedBorder: OutlineInputBorder(

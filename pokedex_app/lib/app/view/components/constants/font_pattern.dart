@@ -25,8 +25,8 @@ class FontPattern {
   TextStyle get tLabelS8 => _tLabel.copyWith(fontSize: 8);
   TextStyle get tLabelS6 => _tLabel.copyWith(fontSize: 6);
 
-  TextStyle get _tTitle => TextStyle(fontWeight: FontWeight.w500, fontFamily: font, fontSize: 16, decoration: TextDecoration.none);
-  TextStyle get tTitleL => _tTitle.copyWith(fontSize: 22, fontWeight: FontWeight.w400);
+  TextStyle get _tTitle => TextStyle(fontWeight: FontWeight.w800, fontFamily: font, fontSize: 16, decoration: TextDecoration.none);
+  TextStyle get tTitleL => _tTitle.copyWith(fontSize: 40, fontWeight: FontWeight.w400);
   TextStyle get tTitleM => _tTitle.copyWith(fontSize: 16);
   TextStyle get tTitleS => _tTitle.copyWith(fontSize: 14);
 

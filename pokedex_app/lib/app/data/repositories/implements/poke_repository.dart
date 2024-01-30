@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:pokedex_app/app/data/models/pokemon.dart';
@@ -24,8 +25,9 @@ class PokeRepository implements IPokeRepository {
         List<Pokemon> posts = List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
         return posts;
       } else {
-        String sMessage = "An error ocurring when trying to search pokemons.";
-        throw PokeException(message: sMessage);
+        sMessage = "An error ocurring when trying to search pokemons.";
+        log(sMessage);
+        return <Pokemon>[];
       }
     } catch (e, stacktrace) {
       "Erro: $e\nStacktrace: $stacktrace";
