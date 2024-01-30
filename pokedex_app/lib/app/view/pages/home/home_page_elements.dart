@@ -5,13 +5,13 @@ import 'package:pokedex_app/app/data/models/pokemon.dart';
 import 'package:pokedex_app/app/data/repositories/implements/poke_repository.dart';
 import 'package:pokedex_app/app/view/components/constants/color_pattern.dart';
 import 'package:pokedex_app/app/view/components/constants/font_pattern.dart';
-import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/poke_card.dart';
+import 'package:pokedex_app/app/view/components/widgets/generics/snackbar_widget_custom.dart';
+import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/home_page_widgets.dart';
 import 'package:pokedex_app/app/view/enum/platform.dart';
 import 'package:pokedex_app/app/view/extensions/size_extensions.dart';
 import 'package:pokedex_app/app/view/helpers/responsive_helper.dart';
 import 'package:pokedex_app/app/view/pages/home/home_page_provider.dart';
 import 'package:pokedex_app/app/view/platform/multiplatform.dart';
-import 'package:shimmer/shimmer.dart';
 
 final loadingProvider = StateNotifierProvider<HomePageProvider, List<Pokemon>>((ref) => HomePageProvider());
 
@@ -27,16 +27,11 @@ class _HomePageElementsState extends ConsumerState<HomePageElements> {
   PokeRepository pokeRepo = PokeRepository(dio: Dio());
   bool isSearch = false;
   bool isLoaded = true;
-  final ScrollController _scrollController = ScrollController();
-
-  // void myFuture() async {
-  //   pokes = await pokeRepo.getPokemons();
-  //   ref.read(loadingProvider.notifier).changeState(pokes);
-  // }
+  late ScrollController _scrollController;
 
   @override
   void initState() {
-    // myFuture();
+    _scrollController = ScrollController();
     super.initState();
   }
 
@@ -122,7 +117,21 @@ class _HomePageElementsState extends ConsumerState<HomePageElements> {
                 ],
               )
             : const SizedBox(),
-        leading: !isSearch && (platform.name == "ios" || platform.name == "android") ? Icon(Icons.menu_rounded, color: context.colors.red) : Container(),
+        leading: !isSearch && (platform.name == "ios" || platform.name == "android")
+            ? Container(
+                margin: const EdgeInsets.only(left: 16),
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(color: context.colors.black, shape: BoxShape.circle, boxShadow: [
+                  BoxShadow(
+                    color: context.colors.darkBlack,
+                    offset: const Offset(0, 3),
+                    blurRadius: 8,
+                  ),
+                ]),
+                child: Icon(Icons.menu, color: context.colors.red, size: 20),
+              )
+            : Container(),
         automaticallyImplyLeading: false,
         flexibleSpace: FlexibleSpaceBar(
           background: Row(mainAxisAlignment: isSearch ? MainAxisAlignment.start : MainAxisAlignment.center, children: [
@@ -200,65 +209,15 @@ class _HomePageElementsState extends ConsumerState<HomePageElements> {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {
               List<Pokemon> pokes = snapshot.data as List<Pokemon>;
-              return cardView(isLoaded, pokes: pokes);
+              return HomePageWidgets.cardView(isLoaded, _scrollController, context, platform, pokes: pokes);
             } else {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'ERRO STATUS CODE',
-                    style: context.textStyles.tTitleL.copyWith(color: context.colors.red),
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    'Houve um erro ao carregar as informações da API.',
-                    style: context.textStyles.tBodyM.copyWith(color: context.colors.middleGrey),
-                  ),
-                ],
-              );
+              return SnackbarWidgetCustom.errorMessage("Error fetching API information.", context);
             }
           } else {
-            return cardView(!isLoaded);
+            return HomePageWidgets.cardView(!isLoaded, _scrollController, context, platform);
           }
         },
       ),
-    );
-  }
-
-  Shimmer getShimmerLoading() {
-    return Shimmer.fromColors(
-      baseColor: const Color.fromARGB(255, 38, 38, 38),
-      highlightColor: const Color.fromARGB(255, 44, 44, 44),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: context.colors.black,
-        ),
-      ),
-    );
-  }
-
-  cardView(bool isLoaded, {List<Pokemon>? pokes}) {
-    return SingleChildScrollView(
-      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        Padding(
-          padding: ResponsiveHelper.isMobile(context) || ResponsiveHelper.isTablet(context) ? const EdgeInsets.symmetric(horizontal: 20, vertical: 10) : const EdgeInsets.symmetric(horizontal: 100, vertical: 80),
-          child: GridView.builder(
-              controller: _scrollController,
-              shrinkWrap: true,
-              itemCount: isLoaded ? pokes!.length : 50,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: platform.name == "ios" || platform.name == "android " ? 300 : 250,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
-                mainAxisExtent: platform.name == "ios" || platform.name == "android " ? 250 : 200,
-              ),
-              itemBuilder: (_, index) {
-                return isLoaded ? PokeCard(pokes![index]) : getShimmerLoading();
-              }),
-        ),
-      ]),
     );
   }
 }
