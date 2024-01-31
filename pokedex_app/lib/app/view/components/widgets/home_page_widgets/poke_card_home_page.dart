@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:pokedex_app/app/data/models/pokemon.dart';
 import 'package:pokedex_app/app/view/components/constants/color_pattern.dart';
 
-class PokeCard extends StatefulWidget {
+class PokeCardHomePage extends StatefulWidget {
   final Pokemon poke;
 
-  const PokeCard(this.poke, {super.key});
+  const PokeCardHomePage(this.poke, {super.key});
 
   @override
-  State createState() => _PokeCardState();
+  State createState() => _PokeCardHomePageState();
 }
 
-class _PokeCardState extends State<PokeCard> {
+class _PokeCardHomePageState extends State<PokeCardHomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
