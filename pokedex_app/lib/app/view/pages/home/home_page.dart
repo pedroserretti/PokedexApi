@@ -1,53 +1,46 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pokedex_app/app/data/models/pokemon.dart';
-import 'package:pokedex_app/app/data/repositories/implements/poke_repository.dart';
-import 'package:pokedex_app/app/view/components/widgets/generics/snackbar_widget_custom.dart';
-import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/grid_view_home_page.dart';
-import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/top_bar_home_page.dart';
-import 'package:pokedex_app/app/view/enum/platform.dart';
+import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/menu/side_menu.dart';
+import 'package:pokedex_app/app/view/extensions/size_extensions.dart';
+import 'package:pokedex_app/app/view/pages/home/home_page_elements.dart';
 import 'package:pokedex_app/app/view/pages/home/home_page_provider.dart';
-import 'package:pokedex_app/app/view/platform/multiplatform.dart';
-
-final loadingProvider = StateNotifierProvider<HomePageProvider, List<Pokemon>>((ref) => HomePageProvider());
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
   @override
-  ConsumerState<HomePage> createState() => _HomePageElementsState();
+  ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageElementsState extends ConsumerState<HomePage> {
-  Platform platform = getPlatform();
-  PokeRepository pokeRepo = PokeRepository(dio: Dio());
-  bool isLoaded = true;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
+class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
-    ref.watch(loadingProvider);
+    bool isSideMenuOpen = ref.watch(menuButtonProvider);
     return Scaffold(
-      appBar: const TopBarHomePage(),
-      body: FutureBuilder(
-        future: pokeRepo.getPokemons(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            if (snapshot.hasData) {
-              List<Pokemon> pokes = snapshot.data as List<Pokemon>;
-              return GridViewHomePage(isLoaded, pokes: pokes);
-            } else {
-              return SnackbarWidgetCustom.errorMessage("Error fetching API information.", context);
-            }
-          } else {
-            return GridViewHomePage(!isLoaded);
-          }
-        },
+      resizeToAvoidBottomInset: false,
+      body: Stack(
+        children: [
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 200),
+            curve: Curves.fastOutSlowIn,
+            width: context.screenWidth - 120,
+            left: isSideMenuOpen ? 0 : -(context.screenWidth - 120),
+            height: context.screenHeight,
+            child: const SideMenu(),
+          ),
+          Transform.translate(
+            offset: Offset(isSideMenuOpen ? context.screenWidth - 120 : 0, 0),
+            child: Transform.scale(
+              scale: isSideMenuOpen ? 0.8 : 1,
+              child: const ClipRRect(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(24),
+                ),
+                child: HomePageElements(),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

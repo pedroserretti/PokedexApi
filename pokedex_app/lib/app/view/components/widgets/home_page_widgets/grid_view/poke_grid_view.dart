@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex_app/app/data/models/pokemon.dart';
-import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/poke_card_home_page.dart';
-import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/shimmer_loading.dart';
-import 'package:pokedex_app/app/view/enum/platform.dart';
+import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/grid_view/poke_card.dart';
+import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/grid_view/shimmer_loading.dart';
 import 'package:pokedex_app/app/view/helpers/responsive_helper.dart';
+import 'package:pokedex_app/app/view/platform/enum/platform.dart';
 import 'package:pokedex_app/app/view/platform/multiplatform.dart';
 
 class GridViewHomePage extends StatefulWidget {
@@ -44,7 +44,7 @@ class _GridViewHomePageState extends State<GridViewHomePage> {
                 mainAxisExtent: platform.name == "ios" || platform.name == "android " ? 250 : 200,
               ),
               itemBuilder: (_, index) {
-                return widget.isLoaded ? PokeCardHomePage(widget.pokes![index]) : const ShimmerLoading();
+                return widget.isLoaded ? PokeCard(widget.pokes![index]) : const ShimmerLoading();
               }),
         ),
       ]),

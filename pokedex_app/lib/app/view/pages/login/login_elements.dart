@@ -4,16 +4,16 @@ import 'package:pokedex_app/app/view/components/constants/color_pattern.dart';
 import 'package:pokedex_app/app/view/components/constants/font_pattern.dart';
 import 'package:pokedex_app/app/view/components/widgets/generics/custom_text.dart';
 import 'package:pokedex_app/app/view/helpers/responsive_helper.dart';
-import 'package:pokedex_app/app/view/pages/login/login_page.dart';
+import 'package:pokedex_app/app/view/pages/login/login_image.dart';
 
-class LoginForms extends StatefulWidget {
-  const LoginForms({super.key});
+class LoginElements extends StatefulWidget {
+  const LoginElements({super.key});
 
   @override
-  State<LoginForms> createState() => _LoginFormsState();
+  State<LoginElements> createState() => _LoginElementsState();
 }
 
-class _LoginFormsState extends State<LoginForms> with SingleTickerProviderStateMixin {
+class _LoginElementsState extends State<LoginElements> {
   // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerSenha = TextEditingController();

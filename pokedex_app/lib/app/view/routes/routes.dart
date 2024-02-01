@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pokedex_app/app/view/pages/forgot_password/forgot_password_page.dart';
-import 'package:pokedex_app/app/view/pages/home/home_page.dart';
+import 'package:pokedex_app/app/view/pages/home/home_page_elements.dart';
 import 'package:pokedex_app/app/view/pages/login/login_page.dart';
 import 'package:pokedex_app/app/view/pages/register/register_page.dart';
 
@@ -28,7 +28,7 @@ final routes = GoRouter(
     ),
     GoRoute(
       path: '/home',
-      pageBuilder: (context, state) => const MaterialPage(child: HomePage(), fullscreenDialog: true),
+      pageBuilder: (context, state) => const MaterialPage(child: HomePageElements(), fullscreenDialog: true),
     ),
     // GoRoute(
     //   path: '/home/:pokeId',
