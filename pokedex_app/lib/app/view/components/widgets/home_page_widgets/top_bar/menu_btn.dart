@@ -10,16 +10,14 @@ class MenuBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: GestureDetector(
-        onTap: press,
-        child: Container(
-          margin: const EdgeInsets.only(left: 20, top: 5),
-          height: 40,
-          width: 40,
-          decoration: BoxDecoration(color: context.colors.black, shape: BoxShape.circle),
-          child: RiveAnimation.asset("assets/rive/menu_button.riv", onInit: riveOnInit, useArtboardSize: false),
-        ),
+    return GestureDetector(
+      onTap: press,
+      child: Container(
+        margin: const EdgeInsets.only(left: 20, top: 5),
+        height: 40,
+        width: 40,
+        decoration: BoxDecoration(color: context.colors.black, shape: BoxShape.circle),
+        child: RiveAnimation.asset("assets/rive/menu_button_red.riv", onInit: riveOnInit),
       ),
     );
   }

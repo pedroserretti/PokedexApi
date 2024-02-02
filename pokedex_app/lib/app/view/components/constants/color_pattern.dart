@@ -12,15 +12,15 @@ class ColorPattern {
     return _instance;
   }
 
-  Color blue = const Color(0xFF00c2ff);
+  Color blue = const Color(0xFF00C2FF);
   Color lightBlue = const Color(0xFF38F3FF);
   Color white = const Color(0xFFFAFAFA);
   Color middleGrey = const Color(0xFF757575);
-  Color darkGrey = const Color.fromARGB(255, 41, 41, 41);
-  Color black = const Color.fromARGB(255, 34, 34, 34);
-  Color darkBlack = const Color.fromARGB(255, 17, 17, 17);
-  Color darkRed = const Color.fromARGB(255, 122, 2, 0);
-  Color red = const Color.fromARGB(255, 220, 22, 19);
+  Color darkGrey = const Color(0xFF292929);
+  Color black = const Color(0xFF222222);
+  Color darkBlack = const Color(0xFF111111);
+  Color darkRed = const Color(0xFF7A0200);
+  Color red = const Color(0xFFDC1613);
 }
 
 extension ColorAppExtensions on BuildContext {

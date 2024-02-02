@@ -14,9 +14,19 @@ class HomePageLoadingProvider extends StateNotifier<List<Pokemon>> {
 final menuButtonProvider = StateNotifierProvider<HomePageMenuButtonProvider, bool>((ref) => HomePageMenuButtonProvider());
 
 class HomePageMenuButtonProvider extends StateNotifier<bool> {
-  HomePageMenuButtonProvider() : super(true);
+  HomePageMenuButtonProvider() : super(false);
 
   void changeMenuState(bool menu) {
     state = menu;
+  }
+}
+
+final isSearchProvider = StateNotifierProvider<HomePageSearchProvider, bool>((ref) => HomePageSearchProvider());
+
+class HomePageSearchProvider extends StateNotifier<bool> {
+  HomePageSearchProvider() : super(false);
+
+  void changeSearchState(bool search) {
+    state = search;
   }
 }

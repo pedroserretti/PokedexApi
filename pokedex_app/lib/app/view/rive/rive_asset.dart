@@ -15,7 +15,7 @@ class RiveAsset {
 
 List<RiveAsset> sideMenus = [
   RiveAsset("assets/rive/icons1.riv", artboard: "HOME", stateMachineName: "HOME_interactivity", title: "Home"),
-  RiveAsset("assets/rive/springy_icons.riv", artboard: "user", stateMachineName: "State Machine 1", title: "Users"),
-  RiveAsset("assets/rive/icons1.riv", artboard: "star", stateMachineName: "State Machine 1", title: "Favorites"),
-  RiveAsset("assets/rive/icons1.riv", artboard: "cog-6-tooth", stateMachineName: "State Machine 1", title: "Settings"),
+  RiveAsset("assets/rive/icons1.riv", artboard: "USER", stateMachineName: "USER_Interactivity", title: "Users"),
+  RiveAsset("assets/rive/icons1.riv", artboard: "LIKE/STAR", stateMachineName: "STAR_Interactivity", title: "Favorites"),
+  RiveAsset("assets/rive/icons1.riv", artboard: "SETTINGS", stateMachineName: "SETTINGS_Interactivity", title: "Settings"),
 ];

@@ -21,10 +21,10 @@ class SideMenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Padding(
-        padding: const EdgeInsets.only(left: 24),
+      const Padding(
+        padding: EdgeInsets.only(left: 24),
         child: Divider(
-          color: context.colors.middleGrey,
+          color: Color.fromRGBO(50, 50, 50, 1),
           height: 1,
         ),
       ),

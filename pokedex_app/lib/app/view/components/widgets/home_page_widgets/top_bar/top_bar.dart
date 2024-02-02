@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokedex_app/app/view/components/constants/color_pattern.dart';
 import 'package:pokedex_app/app/view/components/constants/font_pattern.dart';
-import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/top_bar/menu_btn.dart';
 import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/top_bar/top_bar_titles.dart';
 import 'package:pokedex_app/app/view/extensions/size_extensions.dart';
 import 'package:pokedex_app/app/view/helpers/responsive_helper.dart';
 import 'package:pokedex_app/app/view/pages/home/home_page_provider.dart';
 import 'package:pokedex_app/app/view/platform/enum/platform.dart';
 import 'package:pokedex_app/app/view/platform/multiplatform.dart';
-import 'package:pokedex_app/app/view/rive/rive_utils.dart';
-import 'package:rive/rive.dart';
 
 class TopBar extends ConsumerStatefulWidget implements PreferredSizeWidget {
   const TopBar({super.key});
@@ -19,36 +16,22 @@ class TopBar extends ConsumerStatefulWidget implements PreferredSizeWidget {
   ConsumerState<TopBar> createState() => _TopBarState();
 
   @override
-  Size get preferredSize => const Size.fromHeight(80);
+  Size get preferredSize => const Size.fromHeight(70);
 }
 
 class _TopBarState extends ConsumerState<TopBar> {
   final TextEditingController _controller = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   Platform platform = getPlatform();
-  bool isSearch = false;
-
-  bool isSideMenuOpen = false;
 
   @override
   Widget build(BuildContext context) {
+    bool isSearch = ref.watch(isSearchProvider);
     return AppBar(
       surfaceTintColor: Colors.transparent,
       toolbarHeight: 80,
       bottom: PreferredSize(preferredSize: const Size.fromHeight(1), child: platform.name == "desktop" || platform.name == "web" ? const Divider(thickness: 0.5, height: 0) : Container()),
       title: (platform.name == "web" || platform.name == "desktop") && !(context.screenWidth < 1500) ? const TopBarTitles() : const SizedBox(),
-      leading: !isSearch && (platform.name == "ios" || platform.name == "android")
-          ? MenuBtn(
-              riveOnInit: (artboard) {
-                RiveUtils.getRiveInput(artboard, stateMachineName: "switch", input: "toggleX");
-                isSideMenuOpen = true;
-              },
-              press: () {
-                isSideMenuOpen = !isSideMenuOpen;
-                ref.read(menuButtonProvider.notifier).changeMenuState(isSideMenuOpen);
-              },
-            )
-          : Container(),
       automaticallyImplyLeading: false,
       flexibleSpace: FlexibleSpaceBar(
         background: Padding(
@@ -78,8 +61,7 @@ class _TopBarState extends ConsumerState<TopBar> {
                   textAlignVertical: TextAlignVertical.top,
                   onTap: () {
                     if (platform.name == "ios" || platform.name == "android") {
-                      isSearch = true;
-                      setState(() {});
+                      ref.read(isSearchProvider.notifier).changeSearchState(true);
                     }
                   },
                   decoration: InputDecoration(
@@ -116,8 +98,7 @@ class _TopBarState extends ConsumerState<TopBar> {
                     child: GestureDetector(
                       onTap: () {
                         _focusNode.unfocus();
-                        isSearch = false;
-                        setState(() {});
+                        ref.read(isSearchProvider.notifier).changeSearchState(false);
                       },
                       child: Text(
                         'Cancelar',

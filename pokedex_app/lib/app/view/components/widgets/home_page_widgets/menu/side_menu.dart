@@ -6,6 +6,7 @@ import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/menu/s
 import 'package:pokedex_app/app/view/extensions/size_extensions.dart';
 import 'package:pokedex_app/app/view/rive/rive_asset.dart';
 import 'package:pokedex_app/app/view/rive/rive_utils.dart';
+import 'package:rive/rive.dart';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({super.key});
@@ -19,6 +20,7 @@ class _SideMenuState extends State<SideMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.colors.black,
       body: Container(
         width: 288,
         height: context.screenHeight,
@@ -27,19 +29,22 @@ class _SideMenuState extends State<SideMenu> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SideMenuInfoCard(userName: 'User'),
+              const Padding(padding: EdgeInsets.symmetric(vertical: 35), child: SideMenuInfoCard(userName: 'User')),
               Padding(
-                padding: const EdgeInsets.only(left: 24, top: 32, bottom: 16),
+                padding: const EdgeInsets.only(left: 24, top: 10, bottom: 16),
                 child: Text(
                   "Browse".toUpperCase(),
-                  style: context.textStyles.tTitleM.copyWith(color: context.colors.white),
+                  style: context.textStyles.tBodyL.copyWith(color: context.colors.middleGrey),
                 ),
               ),
               ...sideMenus.map(
                 (menu) => SideMenuTile(
                   menu: menu,
                   riveOnInit: (artboard) {
-                    RiveUtils.getRiveInput(artboard, stateMachineName: menu.stateMachineName, input: menu.input!.name);
+                    StateMachineController? controller = StateMachineController.fromArtboard(artboard, menu.stateMachineName);
+                    artboard.addController(controller!);
+
+                    menu.input = controller.findSMI("active") as SMIBool;
                   },
                   press: () {
                     RiveUtils.changeSMIBoolState(menu.input!);
