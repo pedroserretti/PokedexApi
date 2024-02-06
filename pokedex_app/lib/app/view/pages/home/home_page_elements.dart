@@ -40,12 +40,12 @@ class _HomePageElementsState extends ConsumerState<HomePageElements> {
             if (snapshot.connectionState == ConnectionState.done) {
               if (snapshot.hasData) {
                 List<Pokemon> pokes = snapshot.data as List<Pokemon>;
-                return GridViewHomePage(isLoaded, pokes: pokes);
+                return GridViewHomePage(pokes: pokes);
               } else {
                 return SnackbarWidgetCustom.errorMessage("Error fetching API information.", context);
               }
             } else {
-              return GridViewHomePage(!isLoaded);
+              return const GridViewHomePage();
             }
           },
         ),
