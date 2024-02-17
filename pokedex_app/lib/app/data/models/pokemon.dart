@@ -1,10 +1,13 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:pokedex_app/app/data/models/utility/common.dart';
 
 part 'pokemon.freezed.dart';
 part 'pokemon.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Ability with _$Ability {
   const factory Ability(
     int id,
@@ -21,7 +24,7 @@ class Ability with _$Ability {
   factory Ability.fromJson(Map<String, dynamic> json) => _$AbilityFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class AbilityEffectChange with _$AbilityEffectChange {
   const factory AbilityEffectChange(
     List<Effect> effectEntries,
@@ -31,7 +34,7 @@ class AbilityEffectChange with _$AbilityEffectChange {
   factory AbilityEffectChange.fromJson(Map<String, dynamic> json) => _$AbilityEffectChangeFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class AbilityFlavorText with _$AbilityFlavorText {
   const factory AbilityFlavorText(
     String flavorText,
@@ -42,7 +45,7 @@ class AbilityFlavorText with _$AbilityFlavorText {
   factory AbilityFlavorText.fromJson(Map<String, dynamic> json) => _$AbilityFlavorTextFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class AbilityPokemon with _$AbilityPokemon {
   const factory AbilityPokemon(
     bool isHidden,
@@ -53,7 +56,7 @@ class AbilityPokemon with _$AbilityPokemon {
   factory AbilityPokemon.fromJson(Map<String, dynamic> json) => _$AbilityPokemonFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Characteristic with _$Characteristic {
   const factory Characteristic(
     int id,
@@ -64,7 +67,7 @@ class Characteristic with _$Characteristic {
   factory Characteristic.fromJson(Map<String, dynamic> json) => _$CharacteristicFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class EggGroup with _$EggGroup {
   const factory EggGroup(
     int id,
@@ -76,7 +79,7 @@ class EggGroup with _$EggGroup {
   factory EggGroup.fromJson(Map<String, dynamic> json) => _$EggGroupFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Gender with _$Gender {
   const factory Gender(
     int id,
@@ -88,7 +91,7 @@ class Gender with _$Gender {
   factory Gender.fromJson(Map<String, dynamic> json) => _$GenderFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonSpeciesGender with _$PokemonSpeciesGender {
   const factory PokemonSpeciesGender(
     int rate,
@@ -98,7 +101,7 @@ class PokemonSpeciesGender with _$PokemonSpeciesGender {
   factory PokemonSpeciesGender.fromJson(Map<String, dynamic> json) => _$PokemonSpeciesGenderFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class GrowthRate with _$GrowthRate {
   const factory GrowthRate(
     int id,
@@ -112,7 +115,7 @@ class GrowthRate with _$GrowthRate {
   factory GrowthRate.fromJson(Map<String, dynamic> json) => _$GrowthRateFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class GrowthRateExperienceLevel with _$GrowthRateExperienceLevel {
   const factory GrowthRateExperienceLevel(
     int level,
@@ -122,7 +125,7 @@ class GrowthRateExperienceLevel with _$GrowthRateExperienceLevel {
   factory GrowthRateExperienceLevel.fromJson(Map<String, dynamic> json) => _$GrowthRateExperienceLevelFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Nature with _$Nature {
   const factory Nature(
     int id,
@@ -139,7 +142,7 @@ class Nature with _$Nature {
   factory Nature.fromJson(Map<String, dynamic> json) => _$NatureFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class NatureStatChange with _$NatureStatChange {
   const factory NatureStatChange(
     int maxChange,
@@ -149,7 +152,7 @@ class NatureStatChange with _$NatureStatChange {
   factory NatureStatChange.fromJson(Map<String, dynamic> json) => _$NatureStatChangeFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveBattleStylePreference with _$MoveBattleStylePreference {
   const factory MoveBattleStylePreference(
     int lowHpPreference,
@@ -160,7 +163,7 @@ class MoveBattleStylePreference with _$MoveBattleStylePreference {
   factory MoveBattleStylePreference.fromJson(Map<String, dynamic> json) => _$MoveBattleStylePreferenceFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokeathlonStat with _$PokeathlonStat {
   const factory PokeathlonStat(
     int id,
@@ -172,7 +175,7 @@ class PokeathlonStat with _$PokeathlonStat {
   factory PokeathlonStat.fromJson(Map<String, dynamic> json) => _$PokeathlonStatFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class NaturePokeathlonStatAffectSets with _$NaturePokeathlonStatAffectSets {
   const factory NaturePokeathlonStatAffectSets(
     List<NaturePokeathlonStatAffect> increase,
@@ -182,7 +185,7 @@ class NaturePokeathlonStatAffectSets with _$NaturePokeathlonStatAffectSets {
   factory NaturePokeathlonStatAffectSets.fromJson(Map<String, dynamic> json) => _$NaturePokeathlonStatAffectSetsFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class NaturePokeathlonStatAffect with _$NaturePokeathlonStatAffect {
   const factory NaturePokeathlonStatAffect(
     int maxChange,
@@ -192,7 +195,7 @@ class NaturePokeathlonStatAffect with _$NaturePokeathlonStatAffect {
   factory NaturePokeathlonStatAffect.fromJson(Map<String, dynamic> json) => _$NaturePokeathlonStatAffectFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Pokemon with _$Pokemon {
   const factory Pokemon({
     int? id,
@@ -209,7 +212,7 @@ class Pokemon with _$Pokemon {
     @Default("") String? locationAreaEncounters,
     @Default(null) List<PokemonMove>? moves,
     @Default(null) List<PokemonTypePast>? pastTypes,
-    @Default(null) PokemonSprites? sprites,
+    PokemonSprites? sprites,
     @Default(null) NamedAPIResource? species,
     @Default(null) List<PokemonStat>? stats,
     @Default(null) List<PokemonType>? types,
@@ -218,7 +221,7 @@ class Pokemon with _$Pokemon {
   factory Pokemon.fromJson(Map<String, dynamic> json) => _$PokemonFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonAbility with _$PokemonAbility {
   const factory PokemonAbility(
     bool isHidden,
@@ -229,7 +232,7 @@ class PokemonAbility with _$PokemonAbility {
   factory PokemonAbility.fromJson(Map<String, dynamic> json) => _$PokemonAbilityFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonType with _$PokemonType {
   const factory PokemonType(
     int slot,
@@ -239,7 +242,7 @@ class PokemonType with _$PokemonType {
   factory PokemonType.fromJson(Map<String, dynamic> json) => _$PokemonTypeFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonFormType with _$PokemonFormType {
   const factory PokemonFormType(
     int slot,
@@ -249,7 +252,7 @@ class PokemonFormType with _$PokemonFormType {
   factory PokemonFormType.fromJson(Map<String, dynamic> json) => _$PokemonFormTypeFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonTypePast with _$PokemonTypePast {
   const factory PokemonTypePast(
     NamedAPIResource generation,
@@ -259,7 +262,7 @@ class PokemonTypePast with _$PokemonTypePast {
   factory PokemonTypePast.fromJson(Map<String, dynamic> json) => _$PokemonTypePastFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonHeldItem with _$PokemonHeldItem {
   const factory PokemonHeldItem(
     NamedAPIResource item,
@@ -269,7 +272,7 @@ class PokemonHeldItem with _$PokemonHeldItem {
   factory PokemonHeldItem.fromJson(Map<String, dynamic> json) => _$PokemonHeldItemFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonHeldItemVersion with _$PokemonHeldItemVersion {
   const factory PokemonHeldItemVersion(
     NamedAPIResource version,
@@ -279,7 +282,7 @@ class PokemonHeldItemVersion with _$PokemonHeldItemVersion {
   factory PokemonHeldItemVersion.fromJson(Map<String, dynamic> json) => _$PokemonHeldItemVersionFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonMove with _$PokemonMove {
   const factory PokemonMove(
     NamedAPIResource move,
@@ -289,7 +292,7 @@ class PokemonMove with _$PokemonMove {
   factory PokemonMove.fromJson(Map<String, dynamic> json) => _$PokemonMoveFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonMoveVersion with _$PokemonMoveVersion {
   const factory PokemonMoveVersion(
     NamedAPIResource moveLearnMethod,
@@ -300,7 +303,7 @@ class PokemonMoveVersion with _$PokemonMoveVersion {
   factory PokemonMoveVersion.fromJson(Map<String, dynamic> json) => _$PokemonMoveVersionFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonStat with _$PokemonStat {
   const factory PokemonStat(
     NamedAPIResource stat,
@@ -311,23 +314,23 @@ class PokemonStat with _$PokemonStat {
   factory PokemonStat.fromJson(Map<String, dynamic> json) => _$PokemonStatFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonSprites with _$PokemonSprites {
   const factory PokemonSprites(
-    String? frontDefault,
-    String? frontShiny,
-    String? frontFemale,
-    String? frontShinyFemale,
-    String? backDefault,
-    String? backShiny,
-    String? backFemale,
-    String? backShinyFemale,
+    @JsonKey(name: "front_default") String? frontDefault,
+    @JsonKey(name: "front_shiny") String? frontShiny,
+    @JsonKey(name: "front_female") String? frontFemale,
+    @JsonKey(name: "front_shiny_female") String? frontShinyFemale,
+    @JsonKey(name: "back_default") String? backDefault,
+    @JsonKey(name: "back_shiny") String? backShiny,
+    @JsonKey(name: "back_female") String? backFemale,
+    @JsonKey(name: "back_shiny_female") String? backShinyFemale,
   ) = _PokemonSprites;
 
   factory PokemonSprites.fromJson(Map<String, dynamic> json) => _$PokemonSpritesFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonLocationAreas with _$PokemonLocationAreas {
   const factory PokemonLocationAreas(
     NamedAPIResource locationArea,
@@ -337,7 +340,7 @@ class PokemonLocationAreas with _$PokemonLocationAreas {
   factory PokemonLocationAreas.fromJson(Map<String, dynamic> json) => _$PokemonLocationAreasFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonColor with _$PokemonColor {
   const factory PokemonColor(
     int id,
@@ -349,7 +352,7 @@ class PokemonColor with _$PokemonColor {
   factory PokemonColor.fromJson(Map<String, dynamic> json) => _$PokemonColorFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonForm with _$PokemonForm {
   const factory PokemonForm(
     int id,
@@ -371,7 +374,7 @@ class PokemonForm with _$PokemonForm {
   factory PokemonForm.fromJson(Map<String, dynamic> json) => _$PokemonFormFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonFormSprites with _$PokemonFormSprites {
   const factory PokemonFormSprites(
     String? frontDefault,
@@ -383,7 +386,7 @@ class PokemonFormSprites with _$PokemonFormSprites {
   factory PokemonFormSprites.fromJson(Map<String, dynamic> json) => _$PokemonFormSpritesFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonHabitat with _$PokemonHabitat {
   const factory PokemonHabitat(
     int id,
@@ -395,7 +398,7 @@ class PokemonHabitat with _$PokemonHabitat {
   factory PokemonHabitat.fromJson(Map<String, dynamic> json) => _$PokemonHabitatFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonShape with _$PokemonShape {
   const factory PokemonShape(
     int id,
@@ -408,7 +411,7 @@ class PokemonShape with _$PokemonShape {
   factory PokemonShape.fromJson(Map<String, dynamic> json) => _$PokemonShapeFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class AwesomeName with _$AwesomeName {
   const factory AwesomeName(
     String awesomeName,
@@ -418,7 +421,7 @@ class AwesomeName with _$AwesomeName {
   factory AwesomeName.fromJson(Map<String, dynamic> json) => _$AwesomeNameFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonSpecies with _$PokemonSpecies {
   const factory PokemonSpecies(
     int id,
@@ -453,7 +456,7 @@ class PokemonSpecies with _$PokemonSpecies {
   factory PokemonSpecies.fromJson(Map<String, dynamic> json) => _$PokemonSpeciesFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Genus with _$Genus {
   const factory Genus(
     String genus,
@@ -463,7 +466,7 @@ class Genus with _$Genus {
   factory Genus.fromJson(Map<String, dynamic> json) => _$GenusFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonSpeciesDexEntry with _$PokemonSpeciesDexEntry {
   const factory PokemonSpeciesDexEntry(
     int entryNumber,
@@ -473,7 +476,7 @@ class PokemonSpeciesDexEntry with _$PokemonSpeciesDexEntry {
   factory PokemonSpeciesDexEntry.fromJson(Map<String, dynamic> json) => _$PokemonSpeciesDexEntryFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PalParkEncounterArea with _$PalParkEncounterArea {
   const factory PalParkEncounterArea(
     int baseScore,
@@ -484,7 +487,7 @@ class PalParkEncounterArea with _$PalParkEncounterArea {
   factory PalParkEncounterArea.fromJson(Map<String, dynamic> json) => _$PalParkEncounterAreaFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonSpeciesVariety with _$PokemonSpeciesVariety {
   const factory PokemonSpeciesVariety(
     bool isDefault,
@@ -494,7 +497,7 @@ class PokemonSpeciesVariety with _$PokemonSpeciesVariety {
   factory PokemonSpeciesVariety.fromJson(Map<String, dynamic> json) => _$PokemonSpeciesVarietyFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Stat with _$Stat {
   const factory Stat(
     int id,
@@ -511,7 +514,7 @@ class Stat with _$Stat {
   factory Stat.fromJson(Map<String, dynamic> json) => _$StatFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveStatAffectSets with _$MoveStatAffectSets {
   const factory MoveStatAffectSets(
     List<MoveStatAffect> increase,
@@ -521,7 +524,7 @@ class MoveStatAffectSets with _$MoveStatAffectSets {
   factory MoveStatAffectSets.fromJson(Map<String, dynamic> json) => _$MoveStatAffectSetsFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveStatAffect with _$MoveStatAffect {
   const factory MoveStatAffect(
     int change,
@@ -531,7 +534,7 @@ class MoveStatAffect with _$MoveStatAffect {
   factory MoveStatAffect.fromJson(Map<String, dynamic> json) => _$MoveStatAffectFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class NatureStatAffectSets with _$NatureStatAffectSets {
   const factory NatureStatAffectSets(
     List<NamedAPIResource> increase,
@@ -541,7 +544,7 @@ class NatureStatAffectSets with _$NatureStatAffectSets {
   factory NatureStatAffectSets.fromJson(Map<String, dynamic> json) => _$NatureStatAffectSetsFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Type with _$Type {
   const factory Type(
     int id,
@@ -559,7 +562,7 @@ class Type with _$Type {
   factory Type.fromJson(Map<String, dynamic> json) => _$TypeFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class TypePokemon with _$TypePokemon {
   const factory TypePokemon(
     int slot,
@@ -569,7 +572,7 @@ class TypePokemon with _$TypePokemon {
   factory TypePokemon.fromJson(Map<String, dynamic> json) => _$TypePokemonFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class TypeRelations with _$TypeRelations {
   const factory TypeRelations(
     List<NamedAPIResource> noDamageTo,
@@ -583,7 +586,7 @@ class TypeRelations with _$TypeRelations {
   factory TypeRelations.fromJson(Map<String, dynamic> json) => _$TypeRelationsFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class TypeRelationsPast with _$TypeRelationsPast {
   const factory TypeRelationsPast(
     NamedAPIResource generation,

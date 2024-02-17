@@ -4,7 +4,7 @@ import 'package:pokedex_app/app/data/models/utility/common.dart';
 part 'evolutions.freezed.dart';
 part 'evolutions.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class EvolutionChain with _$EvolutionChain {
   const factory EvolutionChain(
     int id,
@@ -15,7 +15,7 @@ class EvolutionChain with _$EvolutionChain {
   factory EvolutionChain.fromJson(Map<String, dynamic> json) => _$EvolutionChainFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ChainLink with _$ChainLink {
   const factory ChainLink(
     bool isBaby,
@@ -27,7 +27,7 @@ class ChainLink with _$ChainLink {
   factory ChainLink.fromJson(Map<String, dynamic> json) => _$ChainLinkFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class EvolutionDetail with _$EvolutionDetail {
   const factory EvolutionDetail(
     NamedAPIResource? item,
@@ -53,7 +53,7 @@ class EvolutionDetail with _$EvolutionDetail {
   factory EvolutionDetail.fromJson(Map<String, dynamic> json) => _$EvolutionDetailFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class EvolutionTrigger with _$EvolutionTrigger {
   const factory EvolutionTrigger(
     int id,

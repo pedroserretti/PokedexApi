@@ -4,7 +4,7 @@ import 'package:pokedex_app/app/data/models/utility/common.dart';
 part 'encounters.freezed.dart';
 part 'encounters.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class EncounterMethod with _$EncounterMethod {
   const factory EncounterMethod(
     int id,
@@ -16,7 +16,7 @@ class EncounterMethod with _$EncounterMethod {
   factory EncounterMethod.fromJson(Map<String, dynamic> json) => _$EncounterMethodFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class EncounterCondition with _$EncounterCondition {
   const factory EncounterCondition(
     int id,
@@ -28,7 +28,7 @@ class EncounterCondition with _$EncounterCondition {
   factory EncounterCondition.fromJson(Map<String, dynamic> json) => _$EncounterConditionFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class EncounterConditionValue with _$EncounterConditionValue {
   const factory EncounterConditionValue(
     int id,

@@ -5,7 +5,7 @@ import 'package:pokedex_app/app/data/models/utility/common.dart';
 part 'moves.freezed.dart';
 part 'moves.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Move with _$Move {
   const factory Move(
     int id,
@@ -37,7 +37,7 @@ class Move with _$Move {
   factory Move.fromJson(Map<String, dynamic> json) => _$MoveFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ContestComboSets with _$ContestComboSets {
   const factory ContestComboSets(
     ContestComboDetail normal,
@@ -47,7 +47,7 @@ class ContestComboSets with _$ContestComboSets {
   factory ContestComboSets.fromJson(Map<String, dynamic> json) => _$ContestComboSetsFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ContestComboDetail with _$ContestComboDetail {
   const factory ContestComboDetail(
     List<NamedAPIResource>? useBefore,
@@ -57,7 +57,7 @@ class ContestComboDetail with _$ContestComboDetail {
   factory ContestComboDetail.fromJson(Map<String, dynamic> json) => _$ContestComboDetailFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveFlavorText with _$MoveFlavorText {
   const factory MoveFlavorText(
     String flavorText,
@@ -68,7 +68,7 @@ class MoveFlavorText with _$MoveFlavorText {
   factory MoveFlavorText.fromJson(Map<String, dynamic> json) => _$MoveFlavorTextFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveMetaData with _$MoveMetaData {
   const factory MoveMetaData(
     NamedAPIResource ailment,
@@ -88,7 +88,7 @@ class MoveMetaData with _$MoveMetaData {
   factory MoveMetaData.fromJson(Map<String, dynamic> json) => _$MoveMetaDataFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveStatChange with _$MoveStatChange {
   const factory MoveStatChange(
     int change,
@@ -98,7 +98,7 @@ class MoveStatChange with _$MoveStatChange {
   factory MoveStatChange.fromJson(Map<String, dynamic> json) => _$MoveStatChangeFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PastMoveStatValues with _$PastMoveStatValues {
   const factory PastMoveStatValues(
     int? accuracy,
@@ -113,7 +113,7 @@ class PastMoveStatValues with _$PastMoveStatValues {
   factory PastMoveStatValues.fromJson(Map<String, dynamic> json) => _$PastMoveStatValuesFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveAilment with _$MoveAilment {
   const factory MoveAilment(
     int id,
@@ -125,7 +125,7 @@ class MoveAilment with _$MoveAilment {
   factory MoveAilment.fromJson(Map<String, dynamic> json) => _$MoveAilmentFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveBattleStyle with _$MoveBattleStyle {
   const factory MoveBattleStyle(
     int id,
@@ -136,7 +136,7 @@ class MoveBattleStyle with _$MoveBattleStyle {
   factory MoveBattleStyle.fromJson(Map<String, dynamic> json) => _$MoveBattleStyleFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveCategory with _$MoveCategory {
   const factory MoveCategory(
     int id,
@@ -148,7 +148,7 @@ class MoveCategory with _$MoveCategory {
   factory MoveCategory.fromJson(Map<String, dynamic> json) => _$MoveCategoryFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveDamageClass with _$MoveDamageClass {
   const factory MoveDamageClass(
     int id,
@@ -161,7 +161,7 @@ class MoveDamageClass with _$MoveDamageClass {
   factory MoveDamageClass.fromJson(Map<String, dynamic> json) => _$MoveDamageClassFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveLearnMethod with _$MoveLearnMethod {
   const factory MoveLearnMethod(
     int id,
@@ -174,7 +174,7 @@ class MoveLearnMethod with _$MoveLearnMethod {
   factory MoveLearnMethod.fromJson(Map<String, dynamic> json) => _$MoveLearnMethodFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MoveTarget with _$MoveTarget {
   const factory MoveTarget(
     int id,

@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using PokedexApi.Models.API.Pokemons;
+﻿using PokedexApi.Models.API.Pokemons;
 using PokedexApi.Models.API.Utility;
 using PokedexApi.Repositories.Functions;
 using PokedexApi.Repositories.Interfaces;
@@ -9,12 +8,12 @@ namespace PokedexApi
     public class PokeRepository : IPokeRepository {
 
 
-        public async Task<string> SearchAllPokemons() {
+        public async Task<string> SearchAllPokemons(string page) {
             string pokeJson = "";
             Pokemon pokemon = new();
 
             using (HttpClient client = new()) {
-                NamedApiResourceList<Pokemon>? jsonObject = await PokeFunctions.PokeApiResult(client, $"https://pokeapi.co/api/v2/pokemon/?limit=50");
+                NamedApiResourceList<Pokemon>? jsonObject = await PokeFunctions.PokeApiResult(client, page);
                 pokeJson = await PokeFunctions.PokeApiAttributes(jsonObject, client, "simple");
 
                 if (pokeJson != null) {

@@ -4,7 +4,7 @@ import 'package:pokedex_app/app/data/models/utility/common.dart';
 part 'berries.freezed.dart';
 part 'berries.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Berry with _$Berry {
   const factory Berry(
     int id,
@@ -24,7 +24,7 @@ class Berry with _$Berry {
   factory Berry.fromJson(Map<String, dynamic> json) => _$BerryFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class BerryFlavorMap with _$BerryFlavorMap {
   const factory BerryFlavorMap(
     int potency,
@@ -34,7 +34,7 @@ class BerryFlavorMap with _$BerryFlavorMap {
   factory BerryFlavorMap.fromJson(Map<String, dynamic> json) => _$BerryFlavorMapFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class BerryFirmness with _$BerryFirmness {
   const factory BerryFirmness(
     int id,
@@ -46,7 +46,7 @@ class BerryFirmness with _$BerryFirmness {
   factory BerryFirmness.fromJson(Map<String, dynamic> json) => _$BerryFirmnessFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class BerryFlavor with _$BerryFlavor {
   const factory BerryFlavor(
     int id,
@@ -59,7 +59,7 @@ class BerryFlavor with _$BerryFlavor {
   factory BerryFlavor.fromJson(Map<String, dynamic> json) => _$BerryFlavorFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class FlavorBerryMap with _$FlavorBerryMap {
   const factory FlavorBerryMap(
     int potency,

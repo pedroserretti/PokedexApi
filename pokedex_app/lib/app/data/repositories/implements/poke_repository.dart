@@ -8,6 +8,8 @@ import 'package:pokedex_app/app/data/repositories/interfaces/ipoke_repository.da
 
 class PokeRepository implements IPokeRepository {
   final Dio _dio;
+  List<Pokemon> lPokemons = <Pokemon>[];
+  int _page = 1;
 
   PokeRepository({required Dio dio}) : _dio = dio;
 
@@ -17,13 +19,15 @@ class PokeRepository implements IPokeRepository {
 
     try {
       String url = '$webServiceUrl/api/poke/0';
+      _dio.options.headers['grid-page-content'] = _page;
       Response response = await _dio.get(url);
 
       if (response.statusCode == 200) {
         sMessage = "Pokemon searched successfully.";
         Iterable l = json.decode(response.data);
-        List<Pokemon> posts = List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
-        return posts;
+        lPokemons = List<Pokemon>.from(l.map((model) => Pokemon.fromJson(model)));
+        _page++;
+        return lPokemons;
       } else {
         sMessage = "An error ocurring when trying to search pokemons.";
         log(sMessage);

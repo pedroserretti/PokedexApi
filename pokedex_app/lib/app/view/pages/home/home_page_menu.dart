@@ -4,9 +4,9 @@ import 'package:pokedex_app/app/view/components/constants/color_pattern.dart';
 import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/menu/side_menu.dart';
 import 'package:pokedex_app/app/view/extensions/size_extensions.dart';
 import 'package:pokedex_app/app/view/pages/home/home_page_elements.dart';
-import 'package:pokedex_app/app/view/pages/home/home_page_provider.dart';
 import 'package:pokedex_app/app/view/platform/enum/platform.dart';
 import 'package:pokedex_app/app/view/platform/multiplatform.dart';
+import 'package:pokedex_app/app/view/providers/home_page_providers.dart';
 
 class HomePageMenu extends ConsumerStatefulWidget {
   const HomePageMenu({super.key});

@@ -4,7 +4,7 @@ import 'package:pokedex_app/app/data/models/utility/common.dart';
 part 'languages.freezed.dart';
 part 'languages.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Language with _$Language {
   const factory Language(
     int id,

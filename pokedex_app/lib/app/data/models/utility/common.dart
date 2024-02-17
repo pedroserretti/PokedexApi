@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'common.freezed.dart';
 part 'common.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class APIResource with _$APIResource {
   const factory APIResource(
     String url,
@@ -12,7 +12,7 @@ class APIResource with _$APIResource {
   factory APIResource.fromJson(Map<String, dynamic> json) => _$APIResourceFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Description with _$Description {
   const factory Description(
     String description,
@@ -22,7 +22,7 @@ class Description with _$Description {
   factory Description.fromJson(Map<String, dynamic> json) => _$DescriptionFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Effect with _$Effect {
   const factory Effect(
     String effect,
@@ -32,7 +32,7 @@ class Effect with _$Effect {
   factory Effect.fromJson(Map<String, dynamic> json) => _$EffectFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Encounter with _$Encounter {
   const factory Encounter(
     int minLevel,
@@ -45,7 +45,7 @@ class Encounter with _$Encounter {
   factory Encounter.fromJson(Map<String, dynamic> json) => _$EncounterFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class FlavorText with _$FlavorText {
   const factory FlavorText(
     String flavorText,
@@ -56,7 +56,7 @@ class FlavorText with _$FlavorText {
   factory FlavorText.fromJson(Map<String, dynamic> json) => _$FlavorTextFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class GenerationGameIndex with _$GenerationGameIndex {
   const factory GenerationGameIndex(
     int gameIndex,
@@ -66,7 +66,7 @@ class GenerationGameIndex with _$GenerationGameIndex {
   factory GenerationGameIndex.fromJson(Map<String, dynamic> json) => _$GenerationGameIndexFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class MachineVersionDetail with _$MachineVersionDetail {
   const factory MachineVersionDetail(
     APIResource machine,
@@ -76,7 +76,7 @@ class MachineVersionDetail with _$MachineVersionDetail {
   factory MachineVersionDetail.fromJson(Map<String, dynamic> json) => _$MachineVersionDetailFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Name with _$Name {
   const factory Name(
     String name,
@@ -86,7 +86,7 @@ class Name with _$Name {
   factory Name.fromJson(Map<String, dynamic> json) => _$NameFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class NamedAPIResource with _$NamedAPIResource {
   const factory NamedAPIResource(
     String name,
@@ -96,7 +96,7 @@ class NamedAPIResource with _$NamedAPIResource {
   factory NamedAPIResource.fromJson(Map<String, dynamic> json) => _$NamedAPIResourceFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class VerboseEffect with _$VerboseEffect {
   const factory VerboseEffect(
     String effect,
@@ -107,7 +107,7 @@ class VerboseEffect with _$VerboseEffect {
   factory VerboseEffect.fromJson(Map<String, dynamic> json) => _$VerboseEffectFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class VersionEncounterDetail with _$VersionEncounterDetail {
   const factory VersionEncounterDetail(
     NamedAPIResource version,
@@ -118,7 +118,7 @@ class VersionEncounterDetail with _$VersionEncounterDetail {
   factory VersionEncounterDetail.fromJson(Map<String, dynamic> json) => _$VersionEncounterDetailFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class VersionGameIndex with _$VersionGameIndex {
   const factory VersionGameIndex(
     int gameIndex,
@@ -128,7 +128,7 @@ class VersionGameIndex with _$VersionGameIndex {
   factory VersionGameIndex.fromJson(Map<String, dynamic> json) => _$VersionGameIndexFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class VersionGroupFlavorText with _$VersionGroupFlavorText {
   const factory VersionGroupFlavorText(
     String text,
@@ -139,7 +139,7 @@ class VersionGroupFlavorText with _$VersionGroupFlavorText {
   factory VersionGroupFlavorText.fromJson(Map<String, dynamic> json) => _$VersionGroupFlavorTextFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class NamedAPIResourceList with _$NamedAPIResourceList {
   const factory NamedAPIResourceList(
     int count,
@@ -151,7 +151,7 @@ class NamedAPIResourceList with _$NamedAPIResourceList {
   factory NamedAPIResourceList.fromJson(Map<String, dynamic> json) => _$NamedAPIResourceListFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class APIResourceList with _$APIResourceList {
   const factory APIResourceList(
     int count,

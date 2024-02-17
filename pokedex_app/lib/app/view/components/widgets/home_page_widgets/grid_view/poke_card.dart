@@ -19,16 +19,27 @@ class _PokeCardState extends State<PokeCard> {
       decoration: BoxDecoration(
         color: context.colors.black,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: context.colors.darkBlack,
-            blurRadius: 15,
-            offset: const Offset(5, 10),
-          ),
-        ],
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: context.colors.darkBlack,
+        //     blurRadius: 15,
+        //     offset: const Offset(5, 10),
+        //   ),
+        // ],
       ),
       child: Column(
-        children: [Text(widget.poke.name!)],
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.network(
+            widget.poke.sprites!.frontDefault!,
+          ),
+          Text(
+            widget.poke.name!.replaceFirst(
+              widget.poke.name![0],
+              widget.poke.name![0].toUpperCase(),
+            ),
+          ),
+        ],
       ),
     );
   }

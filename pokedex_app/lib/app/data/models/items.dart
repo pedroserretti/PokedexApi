@@ -4,7 +4,7 @@ import 'package:pokedex_app/app/data/models/utility/common.dart';
 part 'items.freezed.dart';
 part 'items.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Item with _$Item {
   const factory Item(
     int id,
@@ -27,7 +27,7 @@ class Item with _$Item {
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ItemSprites with _$ItemSprites {
   const factory ItemSprites(
     String? value,
@@ -36,7 +36,7 @@ class ItemSprites with _$ItemSprites {
   factory ItemSprites.fromJson(Map<String, dynamic> json) => _$ItemSpritesFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ItemHolderPokemon with _$ItemHolderPokemon {
   const factory ItemHolderPokemon(
     NamedAPIResource pokemon,
@@ -46,7 +46,7 @@ class ItemHolderPokemon with _$ItemHolderPokemon {
   factory ItemHolderPokemon.fromJson(Map<String, dynamic> json) => _$ItemHolderPokemonFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ItemHolderPokemonVersionDetail with _$ItemHolderPokemonVersionDetail {
   const factory ItemHolderPokemonVersionDetail(
     int rarity,
@@ -56,7 +56,7 @@ class ItemHolderPokemonVersionDetail with _$ItemHolderPokemonVersionDetail {
   factory ItemHolderPokemonVersionDetail.fromJson(Map<String, dynamic> json) => _$ItemHolderPokemonVersionDetailFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ItemAttribute with _$ItemAttribute {
   const factory ItemAttribute(
     int id,
@@ -69,7 +69,7 @@ class ItemAttribute with _$ItemAttribute {
   factory ItemAttribute.fromJson(Map<String, dynamic> json) => _$ItemAttributeFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ItemCategory with _$ItemCategory {
   const factory ItemCategory(
     int id,
@@ -82,7 +82,7 @@ class ItemCategory with _$ItemCategory {
   factory ItemCategory.fromJson(Map<String, dynamic> json) => _$ItemCategoryFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ItemFlingEffect with _$ItemFlingEffect {
   const factory ItemFlingEffect(
     int id,
@@ -94,7 +94,7 @@ class ItemFlingEffect with _$ItemFlingEffect {
   factory ItemFlingEffect.fromJson(Map<String, dynamic> json) => _$ItemFlingEffectFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ItemPocket with _$ItemPocket {
   const factory ItemPocket(
     int id,

@@ -8,8 +8,16 @@ namespace PokedexApi.Controllers {
 
         [HttpGet("{id}")]
         public async Task<string> GetPokemon() {
+            IEnumerable<KeyValuePair<string, string>> headersRequest = Request.Headers.ToDictionary(rh => rh.Key, rh => string.Join("", rh.Value!));
+            string page = "";
+
+            foreach (var header in headersRequest) {
+                if (header.Key == "grid-page-content") {
+                    page = header.Value;
+                }
+            }
             PokeRepository pokeRepository = new();
-            string pokemon = await pokeRepository.SearchAllPokemons();
+            string pokemon = await pokeRepository.SearchAllPokemons(page);
 
             return pokemon;
         }

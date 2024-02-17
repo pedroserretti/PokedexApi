@@ -4,7 +4,7 @@ import 'package:pokedex_app/app/data/models/utility/common.dart';
 part 'locations.freezed.dart';
 part 'locations.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Location with _$Location {
   const factory Location(
     int id,
@@ -18,7 +18,7 @@ class Location with _$Location {
   factory Location.fromJson(Map<String, dynamic> json) => _$LocationFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class LocationArea with _$LocationArea {
   const factory LocationArea(
     int id,
@@ -33,7 +33,7 @@ class LocationArea with _$LocationArea {
   factory LocationArea.fromJson(Map<String, dynamic> json) => _$LocationAreaFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class EncounterMethodRate with _$EncounterMethodRate {
   const factory EncounterMethodRate(
     NamedAPIResource encounterMethod,
@@ -43,7 +43,7 @@ class EncounterMethodRate with _$EncounterMethodRate {
   factory EncounterMethodRate.fromJson(Map<String, dynamic> json) => _$EncounterMethodRateFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class EncounterVersionDetails with _$EncounterVersionDetails {
   const factory EncounterVersionDetails(
     int rate,
@@ -53,7 +53,7 @@ class EncounterVersionDetails with _$EncounterVersionDetails {
   factory EncounterVersionDetails.fromJson(Map<String, dynamic> json) => _$EncounterVersionDetailsFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PokemonEncounter with _$PokemonEncounter {
   const factory PokemonEncounter(
     NamedAPIResource pokemon,
@@ -63,7 +63,7 @@ class PokemonEncounter with _$PokemonEncounter {
   factory PokemonEncounter.fromJson(Map<String, dynamic> json) => _$PokemonEncounterFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PalParkArea with _$PalParkArea {
   const factory PalParkArea(
     int id,
@@ -75,7 +75,7 @@ class PalParkArea with _$PalParkArea {
   factory PalParkArea.fromJson(Map<String, dynamic> json) => _$PalParkAreaFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class PalParkEncounterSpecies with _$PalParkEncounterSpecies {
   const factory PalParkEncounterSpecies(
     int baseScore,
@@ -86,7 +86,7 @@ class PalParkEncounterSpecies with _$PalParkEncounterSpecies {
   factory PalParkEncounterSpecies.fromJson(Map<String, dynamic> json) => _$PalParkEncounterSpeciesFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Region with _$Region {
   const factory Region(
     int id,

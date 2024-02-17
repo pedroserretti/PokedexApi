@@ -3876,7 +3876,7 @@ class _$PokemonImpl implements _Pokemon {
       this.locationAreaEncounters = "",
       final List<PokemonMove>? moves = null,
       final List<PokemonTypePast>? pastTypes = null,
-      this.sprites = null,
+      this.sprites,
       this.species = null,
       final List<PokemonStat>? stats = null,
       final List<PokemonType>? types = null})
@@ -3981,7 +3981,6 @@ class _$PokemonImpl implements _Pokemon {
   }
 
   @override
-  @JsonKey()
   final PokemonSprites? sprites;
   @override
   @JsonKey()
@@ -5770,6 +5769,7 @@ PokemonSprites _$PokemonSpritesFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PokemonSprites {
+  @JsonKey(name: "front_default")
   String? get frontDefault => throw _privateConstructorUsedError;
   String? get frontShiny => throw _privateConstructorUsedError;
   String? get frontFemale => throw _privateConstructorUsedError;
@@ -5792,7 +5792,7 @@ abstract class $PokemonSpritesCopyWith<$Res> {
       _$PokemonSpritesCopyWithImpl<$Res, PokemonSprites>;
   @useResult
   $Res call(
-      {String? frontDefault,
+      {@JsonKey(name: "front_default") String? frontDefault,
       String? frontShiny,
       String? frontFemale,
       String? frontShinyFemale,
@@ -5870,7 +5870,7 @@ abstract class _$$PokemonSpritesImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? frontDefault,
+      {@JsonKey(name: "front_default") String? frontDefault,
       String? frontShiny,
       String? frontFemale,
       String? frontShinyFemale,
@@ -5941,7 +5941,7 @@ class __$$PokemonSpritesImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PokemonSpritesImpl implements _PokemonSprites {
   const _$PokemonSpritesImpl(
-      this.frontDefault,
+      @JsonKey(name: "front_default") this.frontDefault,
       this.frontShiny,
       this.frontFemale,
       this.frontShinyFemale,
@@ -5954,6 +5954,7 @@ class _$PokemonSpritesImpl implements _PokemonSprites {
       _$$PokemonSpritesImplFromJson(json);
 
   @override
+  @JsonKey(name: "front_default")
   final String? frontDefault;
   @override
   final String? frontShiny;
@@ -6028,7 +6029,7 @@ class _$PokemonSpritesImpl implements _PokemonSprites {
 
 abstract class _PokemonSprites implements PokemonSprites {
   const factory _PokemonSprites(
-      final String? frontDefault,
+      @JsonKey(name: "front_default") final String? frontDefault,
       final String? frontShiny,
       final String? frontFemale,
       final String? frontShinyFemale,
@@ -6041,6 +6042,7 @@ abstract class _PokemonSprites implements PokemonSprites {
       _$PokemonSpritesImpl.fromJson;
 
   @override
+  @JsonKey(name: "front_default")
   String? get frontDefault;
   @override
   String? get frontShiny;

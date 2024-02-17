@@ -361,7 +361,7 @@ Map<String, dynamic> _$$PokemonStatImplToJson(_$PokemonStatImpl instance) => <St
     };
 
 _$PokemonSpritesImpl _$$PokemonSpritesImplFromJson(Map<String, dynamic> json) => _$PokemonSpritesImpl(
-      json['frontDefault'] as String?,
+      json['front_default'] as String?,
       json['frontShiny'] as String?,
       json['frontFemale'] as String?,
       json['frontShinyFemale'] as String?,
@@ -372,7 +372,7 @@ _$PokemonSpritesImpl _$$PokemonSpritesImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$PokemonSpritesImplToJson(_$PokemonSpritesImpl instance) => <String, dynamic>{
-      'frontDefault': instance.frontDefault,
+      'front_default': instance.frontDefault,
       'frontShiny': instance.frontShiny,
       'frontFemale': instance.frontFemale,
       'frontShinyFemale': instance.frontShinyFemale,

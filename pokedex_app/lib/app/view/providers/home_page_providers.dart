@@ -1,12 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pokedex_app/app/data/models/pokemon.dart';
 
-final loadingProvider = StateNotifierProvider<HomePageLoadingProvider, List<Pokemon>>((ref) => HomePageLoadingProvider());
+final loadingProvider = StateNotifierProvider<HomePageLoadingProvider, bool>((ref) => HomePageLoadingProvider());
 
-class HomePageLoadingProvider extends StateNotifier<List<Pokemon>> {
-  HomePageLoadingProvider() : super(List<Pokemon>.empty());
+class HomePageLoadingProvider extends StateNotifier<bool> {
+  HomePageLoadingProvider() : super(false);
 
-  void changeLoadingState(List<Pokemon> index) {
+  void changeLoadingState(bool index) {
     state = index;
   }
 }

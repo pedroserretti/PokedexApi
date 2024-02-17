@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokedex_app/app/view/components/widgets/home_page_widgets/top_bar/menu_btn.dart';
 import 'package:pokedex_app/app/view/extensions/size_extensions.dart';
 import 'package:pokedex_app/app/view/pages/home/home_page_menu.dart';
-import 'package:pokedex_app/app/view/pages/home/home_page_provider.dart';
 import 'package:pokedex_app/app/view/platform/enum/platform.dart';
 import 'package:pokedex_app/app/view/platform/multiplatform.dart';
+import 'package:pokedex_app/app/view/providers/home_page_providers.dart';
 import 'package:pokedex_app/app/view/rive/rive_utils.dart';
 import 'package:rive/rive.dart';
 

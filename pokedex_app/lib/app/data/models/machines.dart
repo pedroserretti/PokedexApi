@@ -4,7 +4,7 @@ import 'package:pokedex_app/app/data/models/utility/common.dart';
 part 'machines.freezed.dart';
 part 'machines.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class Machine with _$Machine {
   const factory Machine(
     int id,

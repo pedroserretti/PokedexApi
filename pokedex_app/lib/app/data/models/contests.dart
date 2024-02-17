@@ -4,7 +4,7 @@ import 'package:pokedex_app/app/data/models/utility/common.dart';
 part 'contests.freezed.dart';
 part 'contests.g.dart';
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ContestType with _$ContestType {
   const factory ContestType(
     int id,
@@ -16,7 +16,7 @@ class ContestType with _$ContestType {
   factory ContestType.fromJson(Map<String, dynamic> json) => _$ContestTypeFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ContestName with _$ContestName {
   const factory ContestName(
     String name,
@@ -27,7 +27,7 @@ class ContestName with _$ContestName {
   factory ContestName.fromJson(Map<String, dynamic> json) => _$ContestNameFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class ContestEffect with _$ContestEffect {
   const factory ContestEffect(
     int id,
@@ -40,7 +40,7 @@ class ContestEffect with _$ContestEffect {
   factory ContestEffect.fromJson(Map<String, dynamic> json) => _$ContestEffectFromJson(json);
 }
 
-@freezed
+@Freezed(unionValueCase: FreezedUnionCase.snake)
 class SuperContestEffect with _$SuperContestEffect {
   const factory SuperContestEffect(
     int id,
